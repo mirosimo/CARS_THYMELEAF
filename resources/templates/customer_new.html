@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{css/app_style.css}" rel = "stylesheet"/>
+      <title>Přidání nového zákazníka</title>
+   </head>
+   <body>
+   		<div class="container">
+   			<h2 class="form-title">Nový zákazník</h2>
+   			
+   			<form class="customer-form" action="#" th:action="@{/saveCustomer}" th:object="${customer}" method="POST">
+   				<input type="text" th:field="*{firstName}" placeholder="Jméno">
+   				<input type="text" th:field="*{lastName}" placeholder="Příjmení">
+   				<input type="text" th:field="*{email}" placeholder="Email">
+   				   				
+   				<select th:field="*{listAddress[0].addressType}" style="visibility: hidden;">
+   					<th:block th:with="typeList = ${ {'M', 'A'} }">
+    					   <option th:each="i : ${typeList}" th:value="${i}" th:text="${i}"
+    					    	th:selected="${i.equals('M')}" >     					
+      						</option>
+    				</th:block>
+				</select>
+   				<input type="text" th:field="*{listAddress[0].city}" placeholder="Město">
+   				<input type="text" th:field="*{listAddress[0].street}" placeholder="Ulice">
+   				<input type="text" th:field="*{listAddress[0].streetNumber}" placeholder="Číslo">
+   				<input type="text" th:field="*{listAddress[0].zipCode}" placeholder="PSČ">
+   				
+   				<button type="submit">Uložit</button>
+   			</form>
+   		</div>   		
+   </body>
+</html>

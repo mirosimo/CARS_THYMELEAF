@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- 
+	View for assigning new Educational Course to Employee 
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <link type="text/css" th:href="@{/css/top_navbar.css}" rel="stylesheet"/>
+      <title th:text="#{app.employee-course.new.title}"></title>
+   </head>
+   <body>
+   		<div class="application-wrapper">
+   			<div class="top-part" th:include="fragments/top_part.html :: top_part">
+   			</div>   
+   			<div class= "middle-part"> 
+	   			<div th:replace="fragments/top_nav :: navbar"></div>
+		   		<div class="content-part">	
+		   			<div class="title-part" >		
+						<h1 th:text="#{app.employee-course.new.title}"></h1>
+					</div>
+	   			
+		   			<form action="#" th:action="@{/employee-course-save}" th:object="${employeeCourse}" method="POST" 
+		   					enctype="multipart/form-data">
+		   				<div class="grid-container-five-col">            
+			            	<label th:text="#{app.employee-course.new.employee-name}"></label>
+			   				<select name="employeeCmb">
+							    <option th:each="employee : ${listEmployee}" 
+							        th:value="${employee.id}" th:text="${employee.firstName} + ' ' + ${employee.lastName} ">
+							    </option>
+							</select>
+			   				<div></div>
+			   				<label th:text="#{app.employee-course.new.course-name}"></label>
+			   				<select name="courseCmb">
+							    <option th:each="course : ${listCourse}" 
+							        th:value="${course.id}" th:text="${course.courseName}">
+							    </option>
+							</select>
+			   				
+			   				<label th:text="#{app.employee-course.new.course-begin}"></label>
+			   				<input class="text-input-box" type="text" size="25" >
+			   				<div></div>
+			   				<label th:text="#{app.employee-course.new.place}"></label>
+			   				<input class="text-input-box" type="text" size="25" th:field="*{employeeCoursePlace}">			   							   												
+			   			</div> 
+			   			<div class="button-part">  				   				   				   				
+			   				<button class="confirm-button" type="submit"
+			   					th:text="#{app.button.save}" ></button>
+			   			</div>
+		   				
+		   			</form>
+		   		</div>	<!-- End content-part -->
+   		</div> <!--  End of middle part -->
+   		<div class="footer-part">
+   		</div>  	
+   </div> <!-- End of application-wrapper -->	   		
+   </body>
+</html>
