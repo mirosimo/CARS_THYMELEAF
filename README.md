@@ -33,4 +33,4 @@ Postfix
 + -detail - view where is displayed detail for particular entity
 + -update - view for updating entity
 
-Is still in progrss so source code is changing every two, three days. 
+Is still in progress so source code is changing every two, three days. 
