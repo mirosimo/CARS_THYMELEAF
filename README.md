@@ -22,7 +22,7 @@ Which could be usefull for understanding the logic - folder xxx-documentation.
 Also in folder xxx-documentation you can find some view examples - scrennshots. But is still in progress so is changing in time. 
 
 There are implemented things like:
-Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, 
+Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Annotations, 
 Images are saved as blob in db, Thymeleaf, Css
 
 ## Thymeleaf
@@ -33,3 +33,4 @@ Postfix
 + -detail - view where is displayed detail for particular entity
 + -update - view for updating entity
 
+Is still in progrss so source code is changing every two, three days. 
