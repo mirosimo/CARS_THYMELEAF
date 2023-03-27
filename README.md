@@ -1,9 +1,10 @@
 # car_showroom - information system for fictive Car Showroom. 
 
 ## Base params of application
-Spring Boot 2.7.6
-DB: Oracle 19
-Template engine: Thymeleaf
++ Spring Boot 2.7.6
++ Java 11
++ DB: Oracle 19
++ Template engine: Thymeleaf
 
 ## Description
 
