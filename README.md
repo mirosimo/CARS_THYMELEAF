@@ -1,6 +1,9 @@
 # car_showroom - information system for fictive Car Showroom. 
 
 ## Base params of application
+Spring Boot 2.7.6
+DB: Oracle 19
+Template engine: Thymeleaf
 
 ## Description
 
@@ -19,7 +22,7 @@ Also in folder xxx-documentation you can find some view examples - scrennshots. 
 
 There are implemented things like:
 Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, 
-Images are saved as blob in db, Thymeleaf
+Images are saved as blob in db, Thymeleaf, Css
 
 Oracle
 
