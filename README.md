@@ -1,4 +1,4 @@
-# car_showroom - information system for fictitious Car Showroom. 
+App for fictitious Car Showroom. 
 
 ## Base params of application
 + Spring Boot 2.7.6
