@@ -25,6 +25,10 @@ There are implemented things like:
 Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Annotations, 
 Images are saved as blob in db, Thymeleaf, Css
 
+## Multilanguage
++ messages.properties
++ messages_en.properties
+
 ## Thymeleaf
 Templates are divided into 4 base groups.
 Postfix
