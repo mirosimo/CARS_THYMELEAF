@@ -25,9 +25,11 @@ There are implemented things like:
 Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, 
 Images are saved as blob in db, Thymeleaf, Css
 
-Oracle
+## Thymeleaf
+Templates are divided into 4 base groups.
+Postfix
++ -new - view for adding new entity into system
++ -list - view where are displayed data in table form
++ -detail - view where is displayed detail for particular entity
++ -update - view for updating entity
 
-list 
-new 
-update
-detail
