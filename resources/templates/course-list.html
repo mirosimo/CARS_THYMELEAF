@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- 
+	List of Educational Courses - table form 
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <link type="text/css" th:href="@{/css/top_navbar.css}" rel="stylesheet"/>
+      <title th:text="#{app.course.list.title}"></title>
+   </head>
+   <body>
+   <div class="application-wrapper">
+	   <div class="top-part" th:include="fragments/top_part.html :: top_part">
+	   </div>
+	   <div class= "middle-part">   
+	   	   <div th:replace="fragments/top_nav :: navbar"></div>
+		   <div class="content-part">	   		   		
+	   			<div class="title-part" >		
+					<h1 th:text="#{app.course.list.title}"></h1>
+				</div>
+				<div class="table-part">			  			    	
+		      		<table cellspacing="0" cellpadding="0">
+		      			<tr class="row_head">	      				
+	      					<th th:text="#{app.record.id}"></th>
+	      					<th th:text="#{app.course.list.name}"></th>
+	      					<th th:text="#{app.course.list.desc}"></th>
+	      					<th th:text="#{app.course.list.company}"></th>
+	      					<th th:text="#{app.course.list.level}"></th>
+	      					<th th:text="#{app.update}"></th>
+	      					<th th:text="#{app.delete}"></th>
+		      			</tr>
+		      			<th:block th:each="course : ${listCourse}" th:object="${course}">	      			
+	      				<tr class="row_body">
+	      					<td th:text="*{id}"></td>
+	      					<td th:text="*{courseName}"></td>
+	      					<td th:text="*{courseDesc}"></td>
+	      					<td th:text="*{company}"></td>
+	      					<td th:text="*{courseLevel}"></td>				      					
+							
+							<!-- Update, delete icons -->		      					
+		      				<td class="update-column">
+		      					<a th:href="@{/car-brand-update/{id}(id=*{id})}" >
+		      						<img src="/img/edit-icon16.png" alt="Edit">
+		      					</a>	      						
+		      				</td>
+		      				<td class="delete-column">
+	      						<a th:href="@{/car-brand-delete/{id}(id=*{id})}" >
+	      							<img src="/img/delete.png" alt="Delete">
+	      						</a>      						
+	      					</td>				
+		      			</tr>  	
+		      			</th:block>      			
+		      		</table>
+	      		</div>
+	      		<div class="button-part">
+	      			<a th:href="@{/course-new}" class="confirm-button" 
+	      				th:text="#{app.button.new-record}"></a>
+	      		</div>
+	      	</div>  <!-- End content-part -->
+   		</div> <!--  End of middle part -->
+   		<div class="footer-part">
+   		</div>  	
+   </div> <!-- End of application-wrapper -->		
+   </body>
+   
+</html>
