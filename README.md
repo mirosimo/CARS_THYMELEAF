@@ -40,4 +40,12 @@ Postfix
 Attribute menuItem (used for menu generating) is pass into templates through MenuInterceptor - Not from controllers.
 Defining in each controller has been little bit annoying.
 
+## CSS
++ Top Strip – logo, two images – used FLEX. 
++ Views for adding new records (label, input box) - used Grid. 
++ Views for table form data output – used Table 
++ Top Menu – resources/static/css/top_navbar.css
+
+Main CSS file – resources/static/css/app_style.css
+
 Is still in progress - Just now I am implementing form validation.
