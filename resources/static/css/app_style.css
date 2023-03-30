@@ -1,0 +1,393 @@
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	text-align: center;
+	background: #484848;
+}
+
+img {
+	display: block;
+}
+
+.application-wrapper {
+	width: 1200px;
+	margin-top: 20px;
+	border-radius: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 1200px;	
+	background: rgba(16, 16, 16, .6);
+	background: #D0D0D0;
+}
+
+
+/* The most Top part area of the View 
+	Strip where is placed logo, and some images 
+*/
+.top-part {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	background: #f8f8f8;
+	height: 250px;
+	/*width: 100%;*/	
+	border-bottom: 1px solid #787878;
+}
+
+/* All child elememts in first level of top-part element */
+.top-part > * {	
+	flex-grow: 0;
+    flex-shrink: 1; 
+}
+
+/* this guy makes the first element (logo) horizontal centered */
+.top-part img:nth-child(1) {
+	margin: auto;
+	max-height: 150px;
+}
+
+.top-part img:nth-child(n+2) {
+	max-height: 250px;
+}
+
+.top-part img:nth-child(3) {
+	border-top-right-radius: 15px;
+}
+
+
+.middle-part {
+	background: rgba(25, 102, 25, 0.5);	
+	min-height: 100vh;
+}
+
+.content-part {	
+	display: inline-block;
+	text-align: center;
+	/*border: 2px solid green;*/
+	width: 1050px;
+	/*background: #b30000; #800000*/
+	
+	background: #b30000;
+	margin-top: 30px;
+	border-radius: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 75px;
+}
+
+
+.logo-part {
+	display: inline-block;
+	text-align: center;
+	margin-top: 30px;
+}
+.logo-part img {
+	max-width: 130px
+}
+
+.title-part {
+	display: inline-block;
+	width: 100%;
+	text-align: center;	
+    font-size: 16px;
+    text-decoration: underline;
+    color:	#989898;
+}
+
+.button-part {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.table-part table {	
+    display: inline-block;
+	border: 2px solid #606060;   
+    border-collapse: collapse;
+    color: 	#D0D0D0;    
+}
+
+.table-part tr[data-href] {
+	cursor: pointer;
+}
+
+/* Head of the table */
+.table-part tr.row_head {
+    background: #264d00;
+    border-bottom: 2px solid #606060;
+}
+
+.table-part .row_head th {
+    border-right: 1px solid #606060;
+    font-size: 20px;    
+    color: #E0E0E0;
+    padding: 4px 8px;
+    
+}
+
+.table-part .row_head th:last-child {
+    border-right: 0px;
+}
+
+
+/* Body of the table */
+
+/* Background Color of odd row */
+.table-part .row_body:nth-child(odd) {    
+    background: #002b80;
+}
+
+/* Background Color of even row */
+.table-part .row_body:nth-child(even) {    
+    background: #802b00;
+}
+
+.table-part .row_body {
+    border-bottom: 1px solid #606060;
+}
+
+.table-part .row_body:last-child {
+    border-bottom: 0px;
+}
+
+.table-part .row_body td {
+    font-size: 16px;    
+    text-align: left;
+    border-right: 1px solid #606060;    
+    padding: 4px 6px;
+    
+}
+
+.table-part .row_body td:last-child {
+    border-right: 0px;
+}
+
+/* For centering update, delete icons in table with data */
+.table-part .delete-column a, .table-part .update-column a {
+	display: block;
+ 	width: 16px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ }
+ 
+ .table-part .delete-column img, .table-part .update-column img {	
+ 	width: 16px;
+ }
+
+
+.confirm-button {
+  /*background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);*/
+  background-image: linear-gradient(-180deg, #009933 0%, #006622 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 8px 15px;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.confirm-button:hover {
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+}
+
+.main-part > form {    
+    position: relative;
+}
+
+/* Grid - one column form (one column means pair: label input)*/
+.grid-container-two-col {
+	display: inline-grid;
+    border: 2px solid #989898;
+    grid-template-columns: auto auto;                            
+    row-gap: 15px;
+    padding: 22px 18px;	
+    justify-content: center;
+    justify-items: start;    
+}
+
+.grid-container-three-col {
+	display: inline-grid;
+    border: 2px solid #989898;
+    grid-template-columns: auto auto auto;                            
+    row-gap: 15px;
+    padding: 22px 18px;	
+    justify-content: center;
+    justify-items: start;    
+}
+
+/* Grid - two column form (one column means pair: label input)*/
+.grid-container-five-col {
+	display: inline-grid;
+    border: 2px solid #989898;
+    grid-template-columns: auto auto 60px auto auto;                            
+    row-gap: 15px;
+    padding: 22px 18px;	
+    justify-content: center;
+    justify-items: start;    
+}
+
+
+.grid-container-two-col label, .grid-container-three-col label, .grid-container-five-col label, .cars-grid span {
+    color: white;
+    align-self: center;
+    font-size: 14px;
+}
+
+/* Properties of inputs and selects in grid*/
+.grid-container-two-col input, .grid-container-three-col input, .grid-container-five-col input,
+	.grid-container-two-col select, .grid-container-three-col select, .grid-container-five-col select
+ {
+    margin-left: 10px;
+    font-size: 14px;
+  	padding-top: 2px;
+  	padding-bottom: 2px;
+}
+
+
+
+/* Spanning over 4 columns in grid. 
+	e.g. used in employee detail for displaying big complete employee name */
+.grid-col-span-4 {
+	grid-column: span 4;
+}
+
+.grid-col-span-2 {
+	grid-column: span 2;
+}
+
+.grid-center-cell {
+	justify-content: center;
+  	align-items: center;
+}
+
+/* End of setup grid */
+
+label.employee-detail-name {
+	display:grid;
+	align-self: center;	
+	font-size: 32px;
+	font-weight: bold;
+	color: #F0F0F0; /*#004080;*/
+	text-decoration: none;
+}
+
+.form-title {
+    font-size: 20px;
+    color: #ff9980;
+    margin-bottom: 38px;
+}
+
+.customer-form input {     
+    display: block;
+    margin-bottom: 5px;
+}
+
+.customer-form button {     
+    margin-top: 10px;
+}
+
+/* Employee - detail form*/
+.empployee-detail-img {
+	max-width: 120px;
+	height: auto;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+/* Cars Grid */
+
+.cars-grid {
+	display: inline-grid;
+    border: 2px solid #989898;
+    grid-template-columns: auto auto auto auto;                            
+    row-gap: 30px;
+    column-gap: 20px;
+    padding: 22px 18px;	
+    justify-content: center;
+    justify-items: start;
+}
+
+    
+.cars-grid description {
+	display: block;
+}
+
+.car-grid-cell-sub-grid {
+	display: grid;
+	row-gap: 10px;
+  	grid-template-rows: 1fr;
+  	grid-template-columns: 1fr;
+  	/*border: 1px solid #99ccff;*/
+}
+
+.car-grid-cell-sub-grid img {
+	max-width: 190px;	
+	align-self: center;  /* Vertical Center alignment in GRID cells - so simple with grid... */	
+}
+
+/* List of country flags - setup flag width */
+.flag-list-img {
+	max-width: 30px;
+}
+
+.employee-detail .address-label {
+	font-weight: bold;
+	/*color: #ffff66;*/
+}
+
+.employee-detail .address-bottom-separator {
+	margin-bottom: 30px;
+}
+
+.separator {	
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  color: #989898;
+  font-size: 16px;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #989898;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+.employee-detail-first-row-wrapper {
+	display: contents;	
+}
+
+.employee-detail-first-row-wrapper label, 
+.employee-detail-first-row-wrapper .emp-detail-img-wrapper{
+	background: #0088cc; /*#0077b3 #66ccff;*/
+	width: 100%;
+	height: 100%;
+}
+ 
+ 
+.view-alert-warning {
+	color: #ffff66;
+	font-size: 16px;
+	margin-left: 10px;
+	margin-bottom: 2px;
+}
