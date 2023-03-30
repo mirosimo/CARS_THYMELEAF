@@ -37,4 +37,7 @@ Postfix
 + -detail - view where is displayed detail for particular entity
 + -update - view for updating entity
 
-Is still in progress so source code is changing every two, three days. 
+Attribute menuItem (used for menu generating) is pass into templates through MenuInterceptor - Not from controllers.
+Defining in each controller has been little bit annoying.
+
+Is still in progress - Just now I am implementing form validation.
