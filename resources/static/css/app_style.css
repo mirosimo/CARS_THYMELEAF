@@ -203,36 +203,38 @@ img {
     position: relative;
 }
 
-/* Grid - one column form (one column means pair: label input)*/
-.grid-container-two-col {
+
+.grid-container-base {
 	display: inline-grid;
     border: 2px solid #989898;
-    grid-template-columns: auto auto;                            
     row-gap: 15px;
     padding: 22px 18px;	
     justify-content: center;
-    justify-items: start;    
+    justify-items: start;
+    align-items: center;
 }
+
+/* Grid - two column grid*/
+.grid-container-two-col {
+    grid-template-columns: auto auto;                                    
+}
+
+/* Grid - three column grid 
+	Grid for views with such a shape: 
+	
+	LABEL - INPUT - ALLERT MESSAGE (input validation)
+*/
 
 .grid-container-three-col {
-	display: inline-grid;
-    border: 2px solid #989898;
     grid-template-columns: auto auto auto;                            
-    row-gap: 15px;
-    padding: 22px 18px;	
-    justify-content: center;
-    justify-items: start;    
 }
 
-/* Grid - two column form (one column means pair: label input)*/
+/* Grid - five columns - the middle is sepparate column 
+	Grid for views with such a shape: 
+	LABEL - INPUT - SEPARATE COLUMN - LABEL - INPUT 
+*/
 .grid-container-five-col {
-	display: inline-grid;
-    border: 2px solid #989898;
     grid-template-columns: auto auto 60px auto auto;                            
-    row-gap: 15px;
-    padding: 22px 18px;	
-    justify-content: center;
-    justify-items: start;    
 }
 
 
