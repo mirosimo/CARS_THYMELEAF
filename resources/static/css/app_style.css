@@ -203,7 +203,8 @@ img {
     position: relative;
 }
 
-
+/*  Base properties for
+	Grids used by views for adding, updating entities, records  */
 .grid-container-base {
 	display: inline-grid;
     border: 2px solid #989898;
@@ -220,11 +221,9 @@ img {
 }
 
 /* Grid - three column grid 
-	Grid for views with such a shape: 
-	
+	Grid for views with such a shape: 	
 	LABEL - INPUT - ALLERT MESSAGE (input validation)
 */
-
 .grid-container-three-col {
     grid-template-columns: auto auto auto;                            
 }
