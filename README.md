@@ -38,7 +38,7 @@ Postfix
 + -update - view for updating entity
 
 Attribute menuItem (used for menu generating) is pass into templates through MenuInterceptor - Not from controllers.
-Defining in each controller has been little bit annoying.
+Defining menuItem attribute in each controller had been little bit annoying.
 
 ## CSS
 + Top Strip – logo, two images – used FLEX. 
