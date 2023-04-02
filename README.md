@@ -40,6 +40,15 @@ Postfix
 Attribute menuItem (used for menu generating) is pass into templates through MenuInterceptor - Not from controllers.
 Defining menuItem attribute in each controller had been little bit annoying.
 
+### Fragments
+
+Are placed in folder: Resources/templates/fragments
+
+Just now are using 3 fragments.
++ top_part - the very top part of application - contains logo and two design images
++ navbar - contains manu
++ input_warning_board - contains alert board, which is displayed, when user inserts and confirm wrong data.
+
 ## CSS
 + Top Strip – logo, two images – used FLEX. 
 + Views for adding new records (label, input box) - used Grid. 
