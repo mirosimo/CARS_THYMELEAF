@@ -30,6 +30,9 @@ Images are saved as blob in db, Thymeleaf, Css
 + messages_en.properties
 
 ## Thymeleaf
+
+Template files are places in folder: **Resources/templates**
+
 Templates are divided into 4 base groups.
 Postfix
 + -new - view for adding new entity into system
@@ -42,12 +45,12 @@ Defining menuItem attribute in each controller had been little bit annoying.
 
 ### Fragments
 
-Are placed in folder: Resources/templates/fragments
+Fragment files are placed in folder: **Resources/templates/fragments**
 
 Just now are using 3 fragments.
-+ top_part - the very top part of application - contains logo and two design images
-+ navbar - contains manu
-+ input_warning_board - contains alert board, which is displayed, when user inserts and confirm wrong data.
++ **top_part** - the very top part of application - contains logo and two design images
++ **navbar** - contains manu
++ **input_warning_board** - contains alert board, which is displayed, when user inserts and confirm wrong data.
 
 ## CSS
 + Top Strip – logo, two images – used FLEX. 
