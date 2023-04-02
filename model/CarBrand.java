@@ -14,18 +14,26 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /*
  * Represent Car Brand e.g. Skoda, Ford, Renault,... 
  * Car Brand is root of hierarchy
  * 
- * 		  1 : N        1 : N		          1	: N
+ * 		  1 : N        1 : N		          M	: N
  * CarBrand --> CarModel --> CarEquipmentPack --> CarEngine
  * 
  * */
 @Table
 @Entity
 public class CarBrand {
+	
+	public CarBrand() {
+		this.active = true;
+	}
+	
+	
 	@Id
 	@SequenceGenerator(
 			name = "car_brand_sequence",
@@ -38,19 +46,25 @@ public class CarBrand {
 	)
 	private long id;
 	
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,50}",message="{app.validation.chars}")
 	private String name;
 	
-	// namme used for url (without diacritic)
-	private String urlName;		
+	// name used in url (without diacritic)
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[a-zA-Z0-9]{2,50}",message="{app.validation.url-chars}")
+	private String urlName;
+	
+	@Size(min = 2, max = 150, message = "{app.validation.chars-count2-150}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,150}",message="{app.validation.chars}")
 	private String descShort;
+	
+	@Size(min = 2, max = 300, message = "{app.validation.chars-count2-300}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,300}",message="{app.validation.chars}")
 	private String descLong;
 	
 	private boolean active;
-	
-	public CarBrand() {
-		this.active = true;
-	}
-	
+			
 	/* 
 	 * This set contains image objects related to  particular car Brand 
 	 * Big, Small Brand logo, etc...
@@ -59,6 +73,9 @@ public class CarBrand {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "f_car_brand_img_id", referencedColumnName = "id")
 	private Set<CarBrandImg> carBrandImgSet = new HashSet<>();
+	
+	@OneToMany(mappedBy="carBrand")
+	private Set<CarEngine> carEngines;
 
 	/* Return object containing big logo img (in bytes form) */
 	public CarBrandImg getBigLogoImg() {		
@@ -135,5 +152,13 @@ public class CarBrand {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public Set<CarEngine> getCarEngines() {
+		return carEngines;
+	}
+
+	public void setCarEngines(Set<CarEngine> carEngines) {
+		this.carEngines = carEngines;
 	}
 }

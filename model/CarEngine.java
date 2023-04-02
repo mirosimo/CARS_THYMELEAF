@@ -14,17 +14,27 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /*
- * Car Engine e.g. Skoda, Ford, Renault,... 
- * Each equipments pack could have different offer of available engines.
+ * Relation between Engine and Car Brand.
+ * Each type of Engine could belong to one Car Brand, 
+ * each Car Brand could have more types of engines.
+ * In real world Car companies share the Engines, but in most case have slightly different
+ * engine tuning. So here in system each type of engine can belong to one Car brand.
+ * Relation is one to many. 
+ *  
+ * Relation between Engine and Equipment Pack  
+ * Each equipments pack could have multiple types of engines.
  * (In basic equipment pack couldn't be possible for customer to order 
  *   the most powerfull engine)
+ * And Each Engine can appear in more equipments pack
+ *   
  * 
- * 		  1 : N        1 : N		          1	: N
+ * 		  1 : N        1 : N		          M	: N
  * CarBrand --> CarModel --> CarEquipmentPack --> CarEngine
  * 
  * */
@@ -50,17 +60,25 @@ public class CarEngine {
 	
 	private long id;
 	
+	@ManyToOne
+    @JoinColumn(name="car_brand_id")
+	CarBrand carBrand;
+	
 	@Enumerated(EnumType.STRING)
-	private EngineType engineType;   // GAS, DIESEL, ELECTRIC	
-	private String code;	
+	private EngineType engineType;   // GAS, DIESEL, ELECTRIC
+	
+	private String code;
+	
 	private int power; 		// power in Kw
+	
 	private String name;
+	
 	private String nameMarketing;
 	private int weight;		// weight in kg
 	
 	
 	/* 
-	 * Each engine could have set of its images... 
+	 * Each engine could have set of images... 
 	 * */
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "f_car_engine_id", referencedColumnName = "id")
@@ -152,6 +170,14 @@ public class CarEngine {
 
 	public void setEngineType(EngineType engineType) {
 		this.engineType = engineType;
+	}
+
+	public CarBrand getCarBrand() {
+		return carBrand;
+	}
+
+	public void setCarBrand(CarBrand carBrand) {
+		this.carBrand = carBrand;
 	}
 	
 }

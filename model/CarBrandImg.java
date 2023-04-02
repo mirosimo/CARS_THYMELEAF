@@ -20,7 +20,17 @@ public class CarBrandImg {
 	 * */
 	public enum ImgType {
 		BRAND_IMG, BRAND_LOGO, BRAND_LOGO_SMALL
-	} 
+	}
+			
+	public CarBrandImg() {
+		this.active = true;
+	}
+
+	public CarBrandImg(ImgType imgType, byte[] img) {
+		this.setImgType(imgType);
+		this.setImg(img);
+		this.setActive(true);
+	}
 	
 	@Id
 	@SequenceGenerator(
@@ -47,9 +57,7 @@ public class CarBrandImg {
 	private boolean active;
 	
 	
-	public CarBrandImg() {
-		this.active = true;
-	}
+
 	
 	// getters, setters
 

@@ -2,15 +2,18 @@ package com.mirosimo.car_showroom.controller;
 
 import java.io.IOException;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.mirosimo.car_showroom.model.CarBrand;
 import com.mirosimo.car_showroom.model.CarBrandImg;
 import com.mirosimo.car_showroom.service.CarBrandService;
@@ -41,37 +44,30 @@ public class CarBrandController {
 		return "car-brand-new";
 	} 
 	
+	/* Saves Car Brand 
+	 * If user inserts wrong data into inputs, than is displayed  again 
+	 * view for adding new data with allert announcement. 
+	 * When is everithing OK, data are saved . */
 	@PostMapping("/car-brand-save")
-	public String saveCarBrand(@ModelAttribute("carBrand") CarBrand carBrand, 
-			@RequestParam("img-main") MultipartFile mainImg,
-			@RequestParam("img-logo-small") MultipartFile imgLogoSmall, 
-			@RequestParam("img-logo-big") MultipartFile imgLogoBig) throws IOException {
-		byte[] imgMainData = mainImg.getBytes();
-		byte[] imgLogoSmallData = imgLogoSmall.getBytes();
-		byte[] imgLogoBigData = imgLogoBig.getBytes();
-		
-		CarBrandImg carBrandImg = new CarBrandImg();
-		carBrandImg.setImgType(CarBrandImg.ImgType.BRAND_IMG);
-		carBrandImg.setImg(imgMainData);
-		
-		CarBrandImg logoSmall = new CarBrandImg();
-		logoSmall.setImgType(CarBrandImg.ImgType.BRAND_LOGO_SMALL);		
-		logoSmall.setImg(imgLogoSmallData);
-
-		
-		CarBrandImg logoBig = new CarBrandImg();
-		logoBig.setImgType(CarBrandImg.ImgType.BRAND_LOGO);		
-		logoBig.setImg(imgLogoBigData);
-		
-		carBrand.getCarBrandImgSet().add(carBrandImg);
-		carBrand.getCarBrandImgSet().add(logoSmall);
-		carBrand.getCarBrandImgSet().add(logoBig);
-		
-		
+	//public String saveCarBrand(@ModelAttribute("carBrand") CarBrand carBrand, 
+	public String saveCarBrand(@Valid CarBrand carBrand, BindingResult result, Model model,
+			@RequestParam("img-main") MultipartFile viewMainImg,
+			@RequestParam("img-logo-small") MultipartFile viewImgLogoSmall, 
+			@RequestParam("img-logo-big") MultipartFile viewImgLogoBig) throws IOException {
+		if (result.hasErrors()) {
+			model.addAttribute("carBrand", carBrand);
+			return "car-brand-new";
+		}
+											
+		carBrand.getCarBrandImgSet().add(new CarBrandImg(CarBrandImg.ImgType.BRAND_IMG, viewMainImg.getBytes()));
+		carBrand.getCarBrandImgSet().add(new CarBrandImg(CarBrandImg.ImgType.BRAND_LOGO_SMALL, viewImgLogoSmall.getBytes()));
+		carBrand.getCarBrandImgSet().add(new CarBrandImg(CarBrandImg.ImgType.BRAND_LOGO, viewImgLogoBig.getBytes()));
+				
 		this.carBrandService.saveEntity(carBrand);
 		return "redirect:/car-brand-list";
 	}
 	
+	/* Deletes Car Brand entity by Id */
 	@GetMapping("/car-brand-delete/{id}")
 	public String deleteItem(@PathVariable (value="id") long id) {
 		this.carBrandService.deleteEntityById(id);

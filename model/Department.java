@@ -2,6 +2,7 @@ package com.mirosimo.car_showroom.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 
@@ -30,10 +32,12 @@ public class Department {
 	)
 	private long id;
 	
-	@Size(min = 2, max = 50, message = "Min 2 znaky max 50 znaků")
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,50}",message="{app.validation.chars}")
 	private String name;
 	
-	@Size(min = 10, max = 150, message = "Min 10 znaky max 150 znaků")
+	@Size(min = 10, max = 150, message = "{app.validation.chars-count2-150}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,50}",message="{app.validation.chars}")
 	private String description;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -70,9 +74,5 @@ public class Department {
 	public void setEmployeeSet(Set<Employee> employeeSet) {
 		this.employeeSet = employeeSet;
 	}
-
-
-
-		
 	
 }
