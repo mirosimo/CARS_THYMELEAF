@@ -349,6 +349,20 @@ label.employee-detail-name {
 	margin-bottom: 30px;
 }
 
+.employee-detail-first-row-wrapper {
+	display: contents;	
+}
+
+.employee-detail-first-row-wrapper label, 
+.employee-detail-first-row-wrapper .emp-detail-img-wrapper{
+	background: #0088cc; /*#0077b3 #66ccff;*/
+	width: 100%;
+	height: 100%;
+}
+
+
+/* Separator Line */
+/* Looks like ---------------- Some Text --------------- */
 .separator {	
   display: flex;
   width: 100%;
@@ -374,21 +388,40 @@ label.employee-detail-name {
   margin-left: .25em;
 }
 
-.employee-detail-first-row-wrapper {
-	display: contents;	
+
+ 
+ /* Warning Text - In view with inputs 	
+ 	When user puts wrong data into it */
+.view-input-warning {
+	background: #707070;
+	color: #ffff66;
+	font-size: 16px;	
+	margin-left: 10px;
+	padding: 2px 20px;
+	border-radius: 4px;
 }
 
-.employee-detail-first-row-wrapper label, 
-.employee-detail-first-row-wrapper .emp-detail-img-wrapper{
-	background: #0088cc; /*#0077b3 #66ccff;*/
-	width: 100%;
-	height: 100%;
+/* The board with alert picture - gives user clear announcement,
+   that is something wrong */
+.input-warning-board {
+	display:inline-flex;	
+	background: #606060; 
+	justify-content: center;
+	align-items: center;
+	padding: 7px 40px;
+	margin-top: 20px;	
+	margin-bottom: 70px;	
+	border-radius: 5px;
+	border: 4px solid #F8F8F8;
 }
- 
- 
-.view-alert-warning {
-	color: #ffff66;
-	font-size: 16px;
-	margin-left: 10px;
-	margin-bottom: 2px;
+
+.input-warning-board img {
+	max-width: 35px;
+
+}
+
+.input-warning-board h1 {	
+	color: #ffff66;	
+	font-size: 20px;
+	margin-left: 20px;	
 }
