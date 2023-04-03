@@ -28,30 +28,33 @@
 		   					enctype="multipart/form-data">
 		   				<!-- Fragment - Warning board -->
 		   				<div th:replace="fragments/input_warning_board.html :: input_warning_board"></div>
-		   				<div class="grid-container-two-col">
-		   					<label th:text="#{app.car-engine.new.equipment-pack-name}"></label>
-			   				<!-- Combo Car Equipment pack -->		   				
-			   				<select id="equipmentPack" name="equipmentPack">		   					
-							    	<option th:each="equipmentPack : ${listCarEquipmentPack}" 
-							    			th:value="${equipmentPack.id}" 
-							    			th:text="${equipmentPack.name}">
-							    	</option>						    						    
-							</select>
-							            
+		   				<div class="grid-container-base grid-container-three-col">		   											
+			   				<input class="data-column" type="hidden" size="18" th:field="${carEngine.carBrand}">		   								   											            
+							
+									   								   											            	
 			            	<label th:text="#{app.car-engine.new.code}"></label>
 			   				<input class="data-column" type="text" size="18"th:field="${carEngine.code}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('code')}" 
+			   					th:errors="*{code}"></div></div>
 			   				
 			   				<label th:text="#{app.car-engine.new.power}"></label>
 			   				<input class="data-column" type="text" size="18"th:field="${carEngine.power}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('power')}" 
+			   					th:errors="*{power}"></div></div>
 			   				
 			   				<label th:text="#{app.car-engine.new.name}"></label>
 			   				<input class="data-column" type="text" size="25" th:field="${carEngine.name}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('name')}" 
+			   					th:errors="*{name}"></div></div>
 			   				
 			   				<label th:text="#{app.car-engine.new.nameMarketing}"></label>
 			   				<input class="data-column" type="text" size="25" th:field="${carEngine.nameMarketing}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('nameMarketing')}" 
+			   					th:errors="*{nameMarketing}"></div></div>
 			   				
 			   				<label th:text="#{app.car-engine.new.weight}"></label>
-			   				<input class="data-column" type="text" size="25" th:field="${carEngine.weight}">		   					   						   				
+			   				<input class="data-column" type="text" size="25" th:field="${carEngine.weight}">
+			   				<div></div> <!-- 3rd column -->		   					   						   				
 			   			</div>   
 			   			<div class="button-part">				   				   				   				
 			   				<button class="confirm-button" type="submit"

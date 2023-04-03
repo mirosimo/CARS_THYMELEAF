@@ -24,21 +24,16 @@
 		      		<table cellspacing="0" cellpadding="0">
 		      			<tr class="row_head">	      				
 	      					<th th:text="#{app.record.id}"></th>
-	      					<th th:text="#{app.car-engine.list.model}"></th>
-	      					<th th:text="#{app.car-engine.list.equipment-pack-name}"></th>
-	      					<th th:text="#{app.car-engine.list.engine-name}"></th>
+	      					<th th:text="#{app.car-engine.list.name}"></th>
 	      					<th th:text="#{app.car-engine.list.code}"></th>
 	      					<th th:text="#{app.car-engine.list.power}"></th>
 	      					<th th:text="#{app.car-engine.list.weight}"></th>      					
 	      					<th th:text="#{app.update}"></th>
 	      					<th th:text="#{app.delete}"></th>
 		      			</tr>
-		      			<th:block th:each="equipmentPack : ${listEntities}" th:object="${equipmentPack}">
-		      				<th:block th:each="engine : *{carEngines}" th:object="${engine}">	      			
+		      			<th:block th:each="engine : ${listEntities}">		      					      		
 	      					<tr class="row_body">
-		      					<td th:text="${equipmentPack.id}"></td>
-		      					<td th:text="${equipmentPack.carModel.name}"></td>
-		      					<td th:text="${equipmentPack.name}"></td>
+		      					<td th:text="${engine.id}"></td>		      					
 		      					<td th:text="${engine.name}"></td>							
 								<td th:text="${engine.code}"></td>
 								<td th:text="${engine.power}"></td>
@@ -56,12 +51,12 @@
 		      						</a>      						
 		      					</td>				
 		      				</tr>
-		      				</th:block>  	
-		      			</th:block>      			
+		      			</th:block>  	
 		      		</table>
 	      		</div>
 	      		<div class="button-part">
-	      			<a th:href="@{/car-equipment-pack-new/{brand_url_name}(brand_url_name=${urlBrand})}" 
+	      			<!--  <a th:href="@{/car-engine-new/{brand_url_name}(brand_url_name=${listEntities[0].getName()})}" -->
+	      			<a th:href="@{/car-engine-new/} + ${listEntities[0].carBrand.urlName}"	      			
 	      				class="confirm-button" 
 	      				th:text="#{app.button.new-record}"></a>
 	      		</div>

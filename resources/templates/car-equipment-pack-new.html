@@ -27,7 +27,7 @@
 		   					enctype="multipart/form-data">
 		   				<!-- Fragment - Warning board -->
 		   				<div th:replace="fragments/input_warning_board.html :: input_warning_board"></div>	
-		   				<div class="grid-container-two-col">
+		   				<div class="grid-container-base grid-container-three-col">
 		   					<label th:text="#{app.car-equipment-pack.new.model-name}"></label>
 			   				<!-- Combo CarModel -->		   				
 			   				<select id="carmodel" name="carmodel" th:field="*{carModel}">		   					
