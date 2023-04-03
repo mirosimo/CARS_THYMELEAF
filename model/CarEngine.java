@@ -18,6 +18,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /*
  * Relation between Engine and Car Brand.
@@ -68,12 +73,20 @@ public class CarEngine {
 	private EngineType engineType;   // GAS, DIESEL, ELECTRIC
 	
 	private String code;
-	
+		
+	@NotNull
+    @Min(10)
+	@Max(10000)
 	private int power; 		// power in Kw
 	
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[.-ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,50}",message="{app.validation.chars}")
 	private String name;
 	
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[.-ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,50}",message="{app.validation.chars}")
 	private String nameMarketing;
+	
 	private int weight;		// weight in kg
 	
 	

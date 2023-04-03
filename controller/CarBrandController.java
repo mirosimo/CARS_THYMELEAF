@@ -49,7 +49,6 @@ public class CarBrandController {
 	 * view for adding new data with allert announcement. 
 	 * When is everithing OK, data are saved . */
 	@PostMapping("/car-brand-save")
-	//public String saveCarBrand(@ModelAttribute("carBrand") CarBrand carBrand, 
 	public String saveCarBrand(@Valid CarBrand carBrand, BindingResult result, Model model,
 			@RequestParam("img-main") MultipartFile viewMainImg,
 			@RequestParam("img-logo-small") MultipartFile viewImgLogoSmall, 
