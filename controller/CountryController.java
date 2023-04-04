@@ -22,9 +22,6 @@ public class CountryController {
 	@Autowired
 	CountryService countryService;
 	
-	@Autowired
-	MenuService menuService;
-	
 	/*
 	 * View where is displayed list of countries
 	 */

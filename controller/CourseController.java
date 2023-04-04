@@ -17,9 +17,6 @@ public class CourseController {
 	@Autowired
 	CourseService courseService;
 	
-	@Autowired
-	MenuService menuService;
-	
 	/*
 	 * View where is displayed list of educational courses
 	 */

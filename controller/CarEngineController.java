@@ -6,19 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import com.mirosimo.car_showroom.model.CarBrand;
 import com.mirosimo.car_showroom.model.CarEngine;
-import com.mirosimo.car_showroom.model.CarEquipmentPack;
 import com.mirosimo.car_showroom.service.CarBrandService;
 import com.mirosimo.car_showroom.service.CarEngineService;
 import com.mirosimo.car_showroom.service.CarEquipmentPackService;
-import com.mirosimo.car_showroom.service.MenuService;
+
 
 @Controller
 public class CarEngineController {
@@ -30,9 +25,6 @@ public class CarEngineController {
 	
 	@Autowired
 	CarEquipmentPackService carEquipmentPackService;
-	
-	@Autowired
-	MenuService menuService;
 
 	
 	/* View with all engine types for particular car brand - All Engine list*/
@@ -85,5 +77,12 @@ public class CarEngineController {
 		}
 		this.carEngineService.saveEntity(carEngine);
 		return "redirect:/car-engine-list/"+carEngine.getCarBrand().getUrlName();
+	}
+	
+	/* Deletes Car Engine entity by Id */
+	@GetMapping("/car-engine-delete/{url_brand}/{id}")
+	public String deleteItem(@PathVariable (value="id") long id, @PathVariable (value="url_brand") String urlBrand ) {
+		this.carEngineService.deleteEntityById(id);
+		return "redirect:/car-engine-list/"+urlBrand;
 	}
 }

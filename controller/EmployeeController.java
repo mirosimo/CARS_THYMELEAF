@@ -58,10 +58,7 @@ public class EmployeeController {
 	
 	@Autowired
 	EducationService educationService;
-	
-	@Autowired
-	MenuService menuService;
-	
+
 
 	/* View displays list of employees in table form */
 	@GetMapping("/employee-list")

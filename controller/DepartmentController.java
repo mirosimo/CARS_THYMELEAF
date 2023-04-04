@@ -18,9 +18,6 @@ public class DepartmentController {
 	@Autowired
 	DepartmentService departmentService;
 	
-	@Autowired
-	MenuService menuService;
-	
 	/* View displays list of departments - in table form */
 	@GetMapping("/department-list")
 	public String listDepartmentView(Model model) {

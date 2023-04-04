@@ -24,9 +24,6 @@ public class CarBrandController {
 	@Autowired
 	CarBrandService carBrandService;
 	
-	@Autowired
-	MenuService menuService;
-	
 	/*
 	 * View where is displayed car brand list in table form
 	 */

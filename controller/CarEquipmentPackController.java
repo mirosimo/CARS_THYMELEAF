@@ -17,7 +17,6 @@ import com.mirosimo.car_showroom.model.CarEquipmentPackImg;
 import com.mirosimo.car_showroom.model.CarModel;
 import com.mirosimo.car_showroom.service.CarEquipmentPackService;
 import com.mirosimo.car_showroom.service.CarModelService;
-import com.mirosimo.car_showroom.service.MenuService;
 
 @Controller
 public class CarEquipmentPackController {
@@ -26,9 +25,6 @@ public class CarEquipmentPackController {
 	
 	@Autowired
 	CarModelService carModelService;
-	
-	@Autowired
-	MenuService menuService;
 	
 	/* List of EquipmentPack for particular car brand and car model */	
 	@GetMapping("/car-equipment-pack-list/{brand_url_name}/{model_url_name}")

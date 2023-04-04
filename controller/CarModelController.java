@@ -19,7 +19,6 @@ import com.mirosimo.car_showroom.model.CarModelImg;
 import com.mirosimo.car_showroom.service.CarBrandService;
 import com.mirosimo.car_showroom.service.CarModelImgService;
 import com.mirosimo.car_showroom.service.CarModelService;
-import com.mirosimo.car_showroom.service.MenuService;
 
 
 /* 
@@ -36,9 +35,6 @@ public class CarModelController {
 	
 	@Autowired
 	CarBrandService carBrandService;
-	
-	@Autowired
-	MenuService menuService;
 	
 	/* View with list of models in table form */	
 	@GetMapping("/car-model-list/{brand-url-name}")

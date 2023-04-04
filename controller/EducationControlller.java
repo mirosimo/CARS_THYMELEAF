@@ -19,9 +19,6 @@ public class EducationControlller {
 	@Autowired
 	EducationService educationService;
 	
-	@Autowired
-	MenuService menuService;
-	
 	@GetMapping("/education-list")
 	public String listEducationView(Model model) {
 		model.addAttribute("listEducation", educationService.getAllEntities());
