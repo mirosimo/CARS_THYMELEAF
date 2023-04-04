@@ -37,14 +37,14 @@
 	      					<td th:text="*{name}"></td>
 	      					<td th:text="*{shortcut}"></td>      					      					
 		      					
-		      				<td style="text-align: center;">
-		      					<a th:href="@{/education-update/{id}(id=*{id})}" >
-		      						<img src="/img/edit-icon16.png" alt="Edit Education" style="height: 12px;">
+		      				<td class="update-column">
+		      					<a th:href="@{/education-update/} + *{id}" >
+		      						<img src="/img/edit-icon16.png" alt="Edit Education" >
 		      					</a>	      						
 		      				</td>
-		      				<td style="text-align: center;">
-	      						<a th:href="@{/education-delete/{id}(id=*{id})}" >
-	      							<img src="/img/delete.png" alt="Delete Education" style="height: 12px;">
+		      				<td class="delete-column">
+	      						<a th:href="@{/education-delete/} + *{id}" >
+	      							<img src="/img/delete.png" alt="Delete Education" >
 	      						</a>      						
 	      					</td>				
 		      			</tr>  	

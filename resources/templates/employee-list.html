@@ -50,13 +50,13 @@
 	      					
 	      					      						      				
 		      				<td class="update-column">
-		      					<a th:href="@{/updateForm/{id}(id=*{id})}" >
-		      						<img src="/img/edit-icon16.png" alt="Edit Customer" >
+		      					<a th:href="@{/employee-update/} + *{id}" >
+		      						<img src="/img/edit-icon16.png" alt="Edit Employee" >
 		      					</a>	      						
 		      				</td>
 		      				<td class="delete-column">
-	      						<a th:href="@{/deleteCustomer/{idd}(idd=*{id})}" >
-	      							<img src="/img/delete.png" alt="Delete Customer" >
+	      						<a th:href="@{/employee-delete/} + *{id}" >
+	      							<img src="/img/delete.png" alt="Delete Employee" >
 	      						</a>      						
 	      					</td>				
 		      			</tr>  	

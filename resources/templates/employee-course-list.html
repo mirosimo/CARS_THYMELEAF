@@ -44,14 +44,14 @@
 	      					</th:block>
 	      				</th:block>		
 	      					
-	      				<td style="text-align: center;">
-	      					<a th:href="@{/updateForm/{id}(id=*{id})}" >
-	      						<img src="/img/edit-icon16.png" alt="Edit Customer" style="height: 12px;">
+	      				<td class="update-column">
+	      					<a th:href="@{/update-employee-course/{id}(id=*{id})}" >
+	      						<img src="/img/edit-icon16.png" alt="Edit Employee-Course" >
 	      					</a>	      						
 	      				</td>
-	      				<td style="text-align: center;">
-      						<a th:href="@{/deleteCustomer/{idd}(idd=*{id})}" >
-      							<img src="/img/delete.png" alt="Delete Customer" style="height: 12px;">
+	      				<td class="delete-column">
+      						<a th:href="@{/delete-employee-course/{idd}(idd=*{id})}" >
+      							<img src="/img/delete.png" alt="Delete Employee-Course" >
       						</a>      						
       					</td>				
 	      			</tr>	      			

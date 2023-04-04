@@ -45,13 +45,13 @@
 	      					<td th:text="*{entityOrder}"></td>      					      					
 		      					
 		      				<td class="update-column">
-		      					<a th:href="@{/car-model-update/{id}(id=*{id})}" >
-		      						<img src="/img/edit-icon16.png" alt="Edit">
+		      					<a th:href="@{/car-model-update/} + *{id}" >
+		      						<img src="/img/edit-icon16.png" alt="Edit Car Model">
 		      					</a>	      						
 		      				</td>
 		      				<td class="delete-column">
-	      						<a th:href="@{/car-model-delete/{brand-url-name}/{id}(id=*{id}, brand-url-name=*{carBrand.urlName})}" >
-	      							<img src="/img/delete.png" alt="Delete">
+	      						<a th:href="@{/car-model-delete/} + *{carBrand.urlName} + '/' + *{id}" >
+	      							<img src="/img/delete.png" alt="Delete Car Model">
 	      						</a>      						
 	      					</td>				
 		      			</tr>  	

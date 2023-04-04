@@ -41,12 +41,12 @@
 		      				
 		      				<!-- update, delete icons -->	
 		      				<td class="update-column">
-		      					<a th:href="@{/car-model-update/{id}(id=*{id})}" >
+		      					<a th:href="@{/car-equipment-pack-update/} + *{id}" >
 		      						<img src="/img/edit-icon16.png" alt="Edit" >
 		      					</a>	      						
 		      				</td>
 		      				<td class="delete-column">
-	      						<a th:href="@{/car-model-delete/{id}(id=*{id})}" >
+	      						<a th:href="@{/car-equipment-pack-delete/} + *{id}" >
 	      							<img src="/img/delete.png" alt="Delete" >
 	      						</a>      						
 	      					</td>				

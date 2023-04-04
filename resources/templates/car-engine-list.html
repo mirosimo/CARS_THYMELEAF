@@ -24,6 +24,7 @@
 		      		<table cellspacing="0" cellpadding="0">
 		      			<tr class="row_head">	      				
 	      					<th th:text="#{app.record.id}"></th>
+	      					<th th:text="#{app.car-brand.list.name}"></th>
 	      					<th th:text="#{app.car-engine.list.name}"></th>
 	      					<th th:text="#{app.car-engine.list.code}"></th>
 	      					<th th:text="#{app.car-engine.list.power}"></th>
@@ -31,23 +32,24 @@
 	      					<th th:text="#{app.update}"></th>
 	      					<th th:text="#{app.delete}"></th>
 		      			</tr>
-		      			<th:block th:each="engine : ${listEntities}">		      					      		
+		      			<th:block th:each="engine : ${listEntities}" th:object="${engine}">		      					      		
 	      					<tr class="row_body">
-		      					<td th:text="${engine.id}"></td>		      					
-		      					<td th:text="${engine.name}"></td>							
-								<td th:text="${engine.code}"></td>
-								<td th:text="${engine.power}"></td>
-								<td th:text="${engine.weight}"></td>						      					      					      					
+		      					<td th:text="*{id}"></td>
+		      					<td th:text="*{carBrand.name}"></td>		      					
+		      					<td th:text="*{name}"></td>							
+								<td th:text="*{code}"></td>
+								<td th:text="*{power}"></td>
+								<td th:text="*{weight}"></td>						      					      					      					
 			      				
 			      				<!-- update, delete icons -->			
 			      				<td class="update-column">
-			      					<a th:href="@{/car-model-update/{id}(id=*{id})}" >
-			      						<img src="/img/edit-icon16.png" alt="Edit" >
+			      					<a th:href="@{/car-engine-update/} + *{carBrand.urlName} + '/'+ *{id}" >
+			      						<img src="/img/edit-icon16.png" alt="Edit Car Engine" >
 			      					</a>	      						
 			      				</td>
 			      				<td class="delete-column">
-		      						<a th:href="@{/car-model-delete/{id}(id=*{id})}" >
-		      							<img src="/img/delete.png" alt="Delete" >
+		      						<a th:href="@{/car-engine-delete/} + *{carBrand.urlName} + '/'+ *{id}" >
+		      							<img src="/img/delete.png" alt="Delete Car Engine" >
 		      						</a>      						
 		      					</td>				
 		      				</tr>
