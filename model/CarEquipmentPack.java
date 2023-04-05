@@ -15,11 +15,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 /*
- * Relation between Model and Equipment Pack
- * Each Equipment pack can appear in one Car Model.
+ * Relation between Car Model and Equipment Pack
+ * 1 : N
+ * Each Equipment pack can appear in just one Car Model.
  * Each Car Model could have more Equipments Packs
  * 
- * Relation between Engine and Equipment Pack  
+ * Relation between Engine and Equipment Pack
+ * M : N  
  * Each equipments pack could have multiple types of engines.
  * And Each Engine can appear in more equipments pack.
  * 
@@ -28,7 +30,7 @@ import javax.persistence.Table;
  * e.g. In basic equipment pack couldn't be possible for customer to order 
  *   the most powerfull engine.
  *   
- * 		  1 : N        1 : N		          M	: N
+ * 	       1 : N        1 : N                M : N
  * CarBrand --> CarModel --> CarEquipmentPack --> CarEngine
  * 
  * 

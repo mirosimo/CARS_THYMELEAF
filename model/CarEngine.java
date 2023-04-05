@@ -25,14 +25,16 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 /*
- * Relation between Engine and Car Brand.
+ * Relation between Car Brand and Car Engine.
+ * 1 : N
  * Each type of Engine could belong to one Car Brand, 
  * each Car Brand could have more types of engines.
  * In real world Car companies share the Engines, but in most case have slightly different
  * engine tuning. So here in system is simplification - each type of Engine can belong just to one Car brand.
  * Relation is one to many. 
  *  
- * Relation between Engine and Equipment Pack  
+ * Relation between Car Engine and Equipment Pack
+ * M : N  
  * Each equipments pack could have multiple types of engines.
  * And Each Engine can appear in more equipments pack.
  * 
@@ -41,7 +43,7 @@ import javax.validation.constraints.Size;
  * e.g. In basic equipment pack couldn't be possible for customer to order 
  *   the most powerfull engine.
  *   
- * 		  1 : N        1 : N		          M	: N
+ *        1 : N         1 : N                M : N
  * CarBrand --> CarModel --> CarEquipmentPack --> CarEngine
  * 
  * */
