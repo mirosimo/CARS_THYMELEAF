@@ -16,7 +16,11 @@
 	   </div>   
 	   <div class= "middle-part">   
 	   		<div th:replace="fragments/top_nav :: navbar"></div>
-		   <div class="content-part">	
+		   <div class="content-part">
+		   		<!-- Car Brand LOGO -->	
+		   		<div class="logo-part" >
+		   				<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(listEntities[0].carBrand.getSmallLogoImg().img)}" />
+		   		</div>	
 	   			<div class="title-part" >		
 					<h1 th:text="#{app.car-engine.list.title}"></h1>
 				</div>
