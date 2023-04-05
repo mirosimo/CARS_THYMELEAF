@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.mirosimo.car_showroom.model.Course;
 import com.mirosimo.car_showroom.service.CourseService;
-import com.mirosimo.car_showroom.service.MenuService;
 
 @Controller
 public class CourseController {

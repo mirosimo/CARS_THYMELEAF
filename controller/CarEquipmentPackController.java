@@ -37,12 +37,12 @@ public class CarEquipmentPackController {
 	}
 	
 	/* 
-	 * Adding new Equipment pack is possible for one particullar car brand.
-	 * e.g. Skoda, Audi,... 
-	 * which is send by url (brand_url_name). 
-	 * On the form is combo box where user choose the model for which wants to
+	 * Adding view appears for one particullar car brand. 
+
+	 * In the View is combo box where user choose the model for which wants to
 	 * add new equipment pack (e.g. Skoda Fabia has: Ambition, Style, Monte Carlo equipment packs ) and then follow 
-	 * inputs for (equipments pack name, photo, etc...)
+	 * inputs for equipments pack name, photo etc...
+	 * User can choose Engines which will be available for equipment pack.
 	 * 
 	 */
 	@GetMapping("/car-equipment-pack-new/{brand_url_name}")

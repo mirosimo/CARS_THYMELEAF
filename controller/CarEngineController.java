@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.mirosimo.car_showroom.Utils.ImageUtil;
 import com.mirosimo.car_showroom.model.CarEngine;
 import com.mirosimo.car_showroom.service.CarBrandService;
 import com.mirosimo.car_showroom.service.CarEngineService;
@@ -31,7 +33,8 @@ public class CarEngineController {
 	@GetMapping("/car-engine-list/{url_brand}")
 	public String getEngineListAll(Model model, 
 			@PathVariable (value="url_brand") String urlBrand) {
-		model.addAttribute("listEntities", this.carEngineService.getEntitiesByCarBrandUrlName(urlBrand));		
+		model.addAttribute("listEntities", this.carEngineService.getEntitiesByCarBrandUrlName(urlBrand));
+		model.addAttribute("imgUtil", new ImageUtil());	
 		return "car-engine-list";
 	}
 	
@@ -63,6 +66,7 @@ public class CarEngineController {
 		CarEngine carEngine = new CarEngine();		
 		carEngine.setCarBrand(carBrandService.getEntityByCarBrandUrlName(urlBrandName));		
 		model.addAttribute("carEngine", carEngine);
+		model.addAttribute("imgUtil", new ImageUtil());	
 		return "car-engine-new";
 	} 
 	
