@@ -21,6 +21,7 @@ I was created 3 ER diagrams
 Which could be usefull for understanding the logic - folder xxx-documentation.
 Also in folder xxx-documentation you can find some view examples - scrennshots. But is still in progress so is changing in time. 
 
+## Implemented features
 For now there are implemented things like:
 Inserting, Updating, Deleting records, Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management, handling, Multilanguage, 
 Views Validation, Just now in progress - JWT - user authorization will be followed by implementing User Roles, Privileges management.
@@ -69,6 +70,8 @@ Main CSS file – resources/static/css/app_style.css
 
 
 ## TO DO
+In the near future will be done :
+
 + User management - Privileges, Roles 
 + Authentication - JWT
 + Error logging
