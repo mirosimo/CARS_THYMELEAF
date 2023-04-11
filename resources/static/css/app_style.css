@@ -425,3 +425,16 @@ label.employee-detail-name {
 	font-size: 20px;
 	margin-left: 20px;	
 }
+
+.engine-checkboxes {
+	text-align: left;
+}
+
+/**********/
+/* Errors */
+/**********/
+
+.error-page .error-reason {
+	color: 	#F5F5F5;
+	font-size: 18px;
+}
