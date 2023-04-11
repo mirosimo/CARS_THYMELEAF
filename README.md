@@ -22,8 +22,8 @@ Which could be usefull for understanding the logic - folder xxx-documentation.
 Also in folder xxx-documentation you can find some view examples - scrennshots. But is still in progress so is changing in time. 
 
 For now there are implemented things like:
-Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management, Multilanguage, 
-Views Validation, Just now in progress - JWT - user authorization, authentication.
+Inserting, Updating, Deleting records, Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management, handling, Multilanguage, 
+Views Validation, Just now in progress - JWT - user authorization, authentication will be followed by implementing User Roles, Privileges management.
 Images are saved as blob in db, Thymeleaf, Css.
 
 ## Multilanguage
