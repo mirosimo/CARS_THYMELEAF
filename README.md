@@ -23,7 +23,7 @@ Also in folder xxx-documentation you can find some view examples - scrennshots. 
 
 ## Implemented features
 For now there are implemented things like:
-Inserting, Updating, Deleting records, Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management, handling, Multilanguage, 
+Inserting, Updating, Deleting records, Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management,  Multilanguage, 
 Views Validation, Just now in progress - JWT - user authorization will be followed by implementing User Roles, Privileges management.
 Images are saved as blob in db, Thymeleaf, Css.
 
