@@ -22,7 +22,8 @@ Which could be usefull for understanding the logic - folder xxx-documentation.
 Also in folder xxx-documentation you can find some view examples - scrennshots. But is still in progress so is changing in time. 
 
 There are implemented things like:
-Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Annotations, 
+Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management, Multilanguage, 
+Views Validation, Just now in progress - JWT - user authorization, authentication.
 Images are saved as blob in db, Thymeleaf, Css
 
 ## Multilanguage
@@ -60,4 +61,4 @@ Just now are using 3 fragments.
 
 Main CSS file – resources/static/css/app_style.css
 
-Is still in progress - Just now I am implementing form validation.
+
