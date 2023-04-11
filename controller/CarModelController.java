@@ -50,7 +50,7 @@ public class CarModelController {
 	public String newCarModelView(Model model, 
 			@PathVariable (value="brand-url-name") String brandUrlName) {
 		CarModel carModel = new CarModel();
-		CarBrand carBrand = carBrandService.getEntityByCarBrandUrlName(brandUrlName);
+		CarBrand carBrand = carBrandService.findEntityByCarBrandUrlName(brandUrlName);
 		carModel.setCarBrand(carBrand);
 		model.addAttribute("carModel", carModel);
 		model.addAttribute("imgUtil", new ImageUtil());				

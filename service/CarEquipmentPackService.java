@@ -28,6 +28,7 @@ public class CarEquipmentPackService {
 		 return carEquipmentPackRepository.findByCarModel_urlName(urlCarModel);			
 	}
 	
+	
 	public CarEquipmentPack getEntityById(long id) {
 		Optional<CarEquipmentPack> optional = this.carEquipmentPackRepository.findById(id);
 		CarEquipmentPack entity = null;
@@ -39,8 +40,8 @@ public class CarEquipmentPackService {
 		return entity;
 	}
 	
-	public void saveEntity(CarEquipmentPack entity) {
-		this.carEquipmentPackRepository.save(entity);
+	public CarEquipmentPack saveEntity(CarEquipmentPack entity) {
+		 return this.carEquipmentPackRepository.save(entity);
 	}
 			
 	public void deleteEntityById(long id) {

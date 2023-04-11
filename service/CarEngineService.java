@@ -2,24 +2,18 @@ package com.mirosimo.car_showroom.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.mirosimo.car_showroom.model.CarEngine;
-import com.mirosimo.car_showroom.repository.CarBrandRepository;
 import com.mirosimo.car_showroom.repository.CarEngineRepository;
 
 @Service
 public class CarEngineService {
 	@Autowired
 	CarEngineRepository carEngineRepository;
-	
-	@Autowired
-	CarBrandService carBrandService;
-	
-	public List<CarEngine> getEntitiesByCarBrandUrlName(String carBrand) {
-		return carEngineRepository.findByCarBrand_id(carBrandService.getEntityByCarBrandUrlName(carBrand).getId());
+		
+	public List<CarEngine> findByCarBrand_urlName(String urlCarBrand) {
+		return carEngineRepository.findByCarBrand_urlName(urlCarBrand);
 	}
 	
 	public void saveEntity(CarEngine entity) {

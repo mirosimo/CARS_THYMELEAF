@@ -32,8 +32,8 @@ public class CarEngineController {
 	/* View with all engine types for particular car brand - All Engine list*/
 	@GetMapping("/car-engine-list/{url_brand}")
 	public String getEngineListAll(Model model, 
-			@PathVariable (value="url_brand") String urlBrand) {
-		model.addAttribute("listEntities", this.carEngineService.getEntitiesByCarBrandUrlName(urlBrand));
+			@PathVariable (value="url_brand") String urlCarBrand) {
+		model.addAttribute("listEntities", this.carEngineService.findByCarBrand_urlName(urlCarBrand));
 		model.addAttribute("imgUtil", new ImageUtil());	
 		return "car-engine-list";
 	}
@@ -64,7 +64,7 @@ public class CarEngineController {
 	public String newCarEngineForm(Model model, 
 			@PathVariable (value="url_brand") String urlBrandName) {
 		CarEngine carEngine = new CarEngine();		
-		carEngine.setCarBrand(carBrandService.getEntityByCarBrandUrlName(urlBrandName));		
+		carEngine.setCarBrand(carBrandService.findEntityByCarBrandUrlName(urlBrandName));		
 		model.addAttribute("carEngine", carEngine);
 		model.addAttribute("imgUtil", new ImageUtil());	
 		return "car-engine-new";

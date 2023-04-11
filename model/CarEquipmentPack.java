@@ -2,18 +2,21 @@ package com.mirosimo.car_showroom.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 /*
  * Relation between Car Model and Equipment Pack
  * 1 : N
@@ -48,14 +51,27 @@ public class CarEquipmentPack {
 			strategy = GenerationType.SEQUENCE,
 			generator = "car_equipment_pack_sequence"
 	)
+	@Column(name = "ID")
 	private long id;
 	
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[.-ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,50}",message="{app.validation.chars}")
 	private String name;
+	
+	// name used in url (without diacritic)
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[a-zA-Z0-9]{2,50}",message="{app.validation.url-chars}")
 	private String urlName;
+	
+	@Size(min = 2, max = 150, message = "{app.validation.chars-count2-150}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,150}",message="{app.validation.chars}")
 	private String descShort;
+	
+	@Size(min = 2, max = 300, message = "{app.validation.chars-count2-300}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,300}",message="{app.validation.chars}")
 	private String descLong;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "f_car_equipment_pack_id", referencedColumnName = "id")
 	Set<CarEquipmentPackImg> carEquipmentPackImgs = new HashSet<>();
 	
@@ -65,10 +81,13 @@ public class CarEquipmentPack {
 	
 	
 	
-	@ManyToMany(mappedBy = "carEquipmentPacks",
-	fetch = FetchType.EAGER, 
-	cascade = {CascadeType.MERGE})
-	private Set<CarEngine> carEngines = new HashSet<>();
+	@OneToMany(mappedBy = "primaryKey.carEquipmentPack",
+            cascade = CascadeType.ALL)
+	private Set<CarEquipmentPackCarEngine> carEquipmentPackCarEngines = new HashSet<>();
+	
+	public void addEngine(CarEquipmentPackCarEngine engine) {
+		this.carEquipmentPackCarEngines.add(engine);
+	}
 
 	public String getName() {
 		return name;
@@ -118,13 +137,7 @@ public class CarEquipmentPack {
 		return carEquipmentPackImgs;
 	}
 
-	public Set<CarEngine> getCarEngines() {
-		return carEngines;
-	}
 
-	public void setCarEngines(Set<CarEngine> carEngines) {
-		this.carEngines = carEngines;
-	}
 
 	public void setId(long id) {
 		this.id = id;
@@ -132,5 +145,13 @@ public class CarEquipmentPack {
 
 	public void setCarEquipmentPackImgs(Set<CarEquipmentPackImg> carEquipmentPackImgs) {
 		this.carEquipmentPackImgs = carEquipmentPackImgs;
+	}
+
+	public Set<CarEquipmentPackCarEngine> getCarEquipmentPackCarEngines() {
+		return carEquipmentPackCarEngines;
+	}
+
+	public void setCarEquipmentPackCarEngines(Set<CarEquipmentPackCarEngine> carEquipmentPackCarEngines) {
+		this.carEquipmentPackCarEngines = carEquipmentPackCarEngines;
 	}
 }

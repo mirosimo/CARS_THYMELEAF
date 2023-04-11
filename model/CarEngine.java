@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,8 +13,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
@@ -66,7 +65,7 @@ public class CarEngine {
 			strategy = GenerationType.SEQUENCE,
 			generator = "car_engine_sequence"
 	)
-	
+	@Column(name = "ID")
 	private long id;
 	
 	@ManyToOne
@@ -101,18 +100,10 @@ public class CarEngine {
 	@JoinColumn(name = "f_car_engine_id", referencedColumnName = "id")
 	private Set<CarEngineImg> carEngineImgs = new HashSet<>();
 	
-	/* 
-	 * One type of engine could appear in different equipment packs 
-	 * And each equipment pack could have more engines. 	
-	 * 
-	 * */
-	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
-	@JoinTable(
-				name="car_engine_equipmentpack",
-				joinColumns = @JoinColumn(name = "engine_id"),
-				inverseJoinColumns = @JoinColumn(name = "equipmentpack_id")
-			)
-	private Set<CarEquipmentPack> carEquipmentPacks = new HashSet<>();
+
+	@OneToMany(mappedBy = "primaryKey.carEngine",
+            cascade = CascadeType.ALL)
+	private Set<CarEquipmentPackCarEngine> carEquipmentPackCarEngines = new HashSet<>();
 	
 	
 	
@@ -165,13 +156,7 @@ public class CarEngine {
 		return id;
 	}
 
-	public Set<CarEquipmentPack> getCarEquipmentPacks() {
-		return carEquipmentPacks;
-	}
 
-	public void setCarEquipmentPacks(Set<CarEquipmentPack> carEquipmentPacks) {
-		this.carEquipmentPacks = carEquipmentPacks;
-	}
 
 	public void setId(long id) {
 		this.id = id;
@@ -195,6 +180,14 @@ public class CarEngine {
 
 	public void setCarBrand(CarBrand carBrand) {
 		this.carBrand = carBrand;
+	}
+
+	public Set<CarEquipmentPackCarEngine> getCarEquipmentPackCarEngines() {
+		return carEquipmentPackCarEngines;
+	}
+
+	public void setCarEquipmentPackCarEngines(Set<CarEquipmentPackCarEngine> carEquipmentPackCarEngines) {
+		this.carEquipmentPackCarEngines = carEquipmentPackCarEngines;
 	}
 	
 }

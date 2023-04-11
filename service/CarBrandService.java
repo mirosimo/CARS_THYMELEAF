@@ -1,9 +1,12 @@
 package com.mirosimo.car_showroom.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.mirosimo.car_showroom.exception.ApiCarException;
 import com.mirosimo.car_showroom.model.CarBrand;
 import com.mirosimo.car_showroom.repository.CarBrandRepository;
 
@@ -24,7 +27,25 @@ public class CarBrandService {
 		this.carBrandRepository.deleteById(id);
 	}
 	
-	public CarBrand getEntityByCarBrandUrlName(String brandUrlName) {
-		return this.carBrandRepository.findByUrlName(brandUrlName);
+	public CarBrand findEntityByCarBrandUrlName(String brandUrlName) {
+		if (this.carBrandRepository.findByUrlName(brandUrlName) != null) {
+			return this.carBrandRepository.findByUrlName(brandUrlName);
+		} else {		
+			ApiCarException err = new ApiCarException("app.error.car-brand-not-found");
+			throw err;
+		}
+	}
+	
+	public CarBrand getEntityById(long id) {
+		Optional<CarBrand> optional = this.carBrandRepository.findById(id);
+		CarBrand entity = null;
+		if (optional.isPresent()) {
+			entity = optional.get();
+		} else {
+			//throw new RuntimeException(" Not found car brand ID: " + id);
+			//throw new IllegalStateException(" Not found car brand ID: " + id);
+			throw new ApiCarException("Custooom exception");
+		}
+		return entity;
 	}
 }

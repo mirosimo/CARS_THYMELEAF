@@ -11,6 +11,18 @@ import javax.persistence.Table;
 @Table
 @Entity
 public class CarEquipmentPackImg {
+	
+	
+	
+	public CarEquipmentPackImg() {
+		super();		
+	}
+	
+	public CarEquipmentPackImg(byte[] imgData) {
+		super();		
+		this.setImg(imgData);
+	}
+
 	@Id
 	@SequenceGenerator(
 			name = "car_equipment_pack_img_sequence",
