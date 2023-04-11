@@ -21,14 +21,21 @@ I was created 3 ER diagrams
 Which could be usefull for understanding the logic - folder xxx-documentation.
 Also in folder xxx-documentation you can find some view examples - scrennshots. But is still in progress so is changing in time. 
 
-There are implemented things like:
+For now there are implemented things like:
 Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management, Multilanguage, 
 Views Validation, Just now in progress - JWT - user authorization, authentication.
-Images are saved as blob in db, Thymeleaf, Css
+Images are saved as blob in db, Thymeleaf, Css.
 
 ## Multilanguage
 + messages.properties
 + messages_en.properties
+
+## Error, Exception management
+When occur an exception, than is user informed ( In concise form via Error page ).
+
+TODO
+When will be done Priviledge, Role management, than the users with needed priviledges could
+also display print stack Trace of an exception. 
 
 ## Thymeleaf
 
