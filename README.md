@@ -62,3 +62,7 @@ Just now are using 3 fragments.
 Main CSS file – resources/static/css/app_style.css
 
 
+## TO DO
++ User management - Privileges, Roles 
++ Authentication - JWT
++ Error logging
