@@ -73,7 +73,7 @@ public class CarEquipmentPackController {
 			model.addAttribute("listCarModel", carModelService.getEntitiesByCarBrandName(urlCarBrand));
 			model.addAttribute("listCarBrandEngines", carEngineService.findByCarBrand_urlName(urlCarBrand));
 			
-		} catch (ApiCarException e) {				
+		} catch (ApiCarException e) {			
 			model.addAttribute("apiCarException", e);		
 			return "errors/error-page";
 		}

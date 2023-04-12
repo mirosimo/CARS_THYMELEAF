@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table
@@ -31,12 +33,21 @@ public class CarModel {
 	)
 	private long id;
 	
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,50}",message="{app.validation.chars}")
 	private String name;
 	
-	// String determing model name - used in url
+	// name used in url (without diacritic)
+	@Size(min = 2, max = 50, message = "{app.validation.chars-count2-50}")
+	@Pattern(regexp="^[a-zA-Z0-9]{2,50}",message="{app.validation.url-chars}")
 	private String urlName;
 	
+	@Size(min = 2, max = 150, message = "{app.validation.chars-count2-150}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,150}",message="{app.validation.chars}")
 	private String descShort;
+	
+	@Size(min = 2, max = 300, message = "{app.validation.chars-count2-300}")
+	@Pattern(regexp="^[ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]{2,300}",message="{app.validation.chars}")
 	private String descLong;
 	
 	// Sometimes is needed specific order of models
