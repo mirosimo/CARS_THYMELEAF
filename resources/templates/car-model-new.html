@@ -45,21 +45,31 @@
 							            
 			            	<label th:text="#{app.car-model.new.name}"></label>
 			   				<input class="text-input-box" type="text" size="18" th:field="*{name}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('name')}" 
+			   					th:errors="*{name}"></div></div>
 			   				
 			   				<label th:text="#{app.car-model.new.url-name}"></label>
 			   				<input class="text-input-box" type="text" size="18" th:field="*{urlName}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('urlName')}" 
+			   					th:errors="*{urlName}"></div></div>
 			   				
 			   				<label th:text="#{app.car-model.new.description-short}"></label>
 			   				<input class="text-input-box" type="text" size="25" th:field="*{descShort}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('descShort')}" 
+			   					th:errors="*{descShort}"></div></div>
 			   				
 			   				<label th:text="#{app.car-model.new.description-long}"></label>
 			   				<input class="text-input-box" type="text" size="25" th:field="*{descLong}">
-			   				
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('descLong')}" 
+			   					th:errors="*{descLong}"></div></div>
+			   					
 			   				<label th:text="#{app.car-model.new.order}"></label>
 			   				<input class="text-input-box" type="text" size="25" th:field="*{entityOrder}">
+			   				<div></div> <!-- 3rd column -->
 			   				
 			   				<label th:text="#{app.car-model.new.car-model-img}"></label>
-							<input type="file" name="image" accept="image/*">		   						   				
+							<input type="file" name="image" accept="image/*">	
+							<div></div> <!-- 3rd column -->	   						   				
 			   			</div>   
 			   			<div class="button-part">				   				   				   				
 			   				<button class="confirm-button" type="submit"

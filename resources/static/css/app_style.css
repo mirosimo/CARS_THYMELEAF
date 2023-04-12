@@ -437,4 +437,7 @@ label.employee-detail-name {
 .error-page .error-reason {
 	color: 	#F5F5F5;
 	font-size: 18px;
+	background: #606060;
+	padding: 8px 15px;
 }
+

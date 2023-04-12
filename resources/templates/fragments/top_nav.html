@@ -12,7 +12,7 @@
 		<ul>
 			<li th:each="item : ${menuItem.nestedItems}"> 
 				<a th:href="@{/{url}(url=${item.url})}" 
-					th:text="${item.itemName}"></a>									                           
+					th:text="#{${item.itemName}}"></a>									                           
 						<div th:with="menuItem = ${item}" 
 							th:include="fragments/top_nav.html :: navbar" th:remove="tag" ></div>																										
 			</li>
