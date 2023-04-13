@@ -8,7 +8,7 @@
 
 ## Description
 
-Here appears source code to my training application in Spring Boot on which I have been working for last days. 
+Here appears source code of my training application in Spring Boot on which I have been working for last days. 
 At this time the applications is consist of about 30 entities and similar number of tables in db. 
 For now is in progress stuff around car configuration. Entities - CarBrand, CarModel, CarEquipmentPack, CarEngine, etc.
 And the other branch where I am working on is around human resources - entity Employee, and many relational entities.
@@ -24,7 +24,7 @@ Also in folder xxx-documentation you can find some view examples - scrennshots. 
 ## Implemented features
 For now there are implemented things like:
 Inserting, Updating, Deleting records, Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management,  Multilanguage, 
-Views Validation, Just now in progress - JWT - user authorization will be followed by implementing User Roles, Privileges management.
+Views Validation, Just now in progress - JWT - authorization, authentification. After that will be implementing User Roles, Privileges management.
 Images are saved as blob in db, Thymeleaf, Css.
 
 ## Multilanguage
@@ -34,8 +34,8 @@ Images are saved as blob in db, Thymeleaf, Css.
 ## Error, Exception management
 When occur an exception, than is user informed ( In concise form via Error page ).
 
-When will be done Priviledge, Role management, than the users with needed priviledges could
-also display print stack Trace of an exception. 
+After Priviledge, Role management will be done, users with needed priviledges could
+also display full text of an exception - PrintStackTrace. 
 
 ## Thymeleaf
 
