@@ -81,4 +81,24 @@ public class Country {
 	public void setFlag(byte[] flag) {
 		this.flag = flag;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Country entity = (Country) obj;
+		return id != 0L && id == entity.getId();		
+	}
+	
+	/* Is used one number for all entities - one bucket for all entities 
+	 * Reason why - ID is generated in database and therefore could 
+	 * exist entities in transient state which don't have assigned ID yet */
+	@Override
+	public int hashCode() {
+		return 23;
+	}
 }

@@ -34,4 +34,6 @@ public class CarEquipmentPackCarEngineId implements Serializable {
 	public void setCarEngine(CarEngine carEngine) {
 		this.carEngine = carEngine;
 	}
+	
+	
 }
