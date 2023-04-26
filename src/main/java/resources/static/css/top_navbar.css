@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+
+
+.m-navbar {
+    width: 100%;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px; 
+}
+
+.m-navbar ul {   
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+/* First level - menu Items are side by side */
+.m-navbar > ul > li {
+    float: left;
+}
+
+.m-navbar ul li {
+    /*padding: 12px 30px;*/
+    box-shadow: 1px 0 0 #444;
+    position: relative;
+    margin-bottom: 0px;
+    background: linear-gradient(#0066cc, #004080);    
+}
+
+.m-navbar > ul > li:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;    
+}
+
+.m-navbar > ul > li:first-child > a {
+    padding: 8px 30px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.m-navbar > ul > li:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: linear-gradient(#208000, #134d00);
+}
+
+.m-navbar > ul a {    
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.m-navbar > ul > li:nth-child(n+2) > a {
+    padding: 8px 30px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-left: 2px solid rgba(255, 71, 26, 0.3);
+}
+
+
+.m-navbar > ul li:hover > a {
+    color: #fafafa;
+    background: #ff6600;
+}
+
+.m-navbar > ul > li:hover:last-child > a {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;    
+}
+
+.m-navbar > ul > li:hover:first-child > a {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;    
+}
+
+/* End of FIRST menu level */
+
+/* Beginning  - second and higher level */
+.m-navbar > ul li ul {
+    margin: 0px 0 0 0; 
+    opacity: 0; 
+    visibility: hidden;
+    position: absolute;
+    top: 34px;
+    left: 0;
+    z-index: 40;    
+    border-radius: 3px; 
+    transition: all .3s ease-in-out; 
+}
+
+.m-navbar > ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    margin: 0;
+}
+
+.m-navbar > ul li ul li {
+    float: none;
+    display: inline-block;    
+    border: 0; 
+    width: 150px;
+    background: linear-gradient(#0066cc, #004080);
+    box-shadow: 0 1px 0 #111, 0 2px 0 #666; 
+    border-bottom: 1px solid rgba(255, 153, 128, 0.3);
+    border-radius: 5px;
+}
+
+.m-navbar > ul ul li:last-child {
+    box-shadow: none;
+}
+
+.m-navbar > ul li ul li a {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    width: 150px;
+    display: block;    
+    white-space: nowrap;
+    float: none;
+    text-align: center;
+    text-transform: uppercase;    
+}
+
+.m-navbar > ul li ul li:hover > a {
+    background: #ff944d;   
+}
+
+.m-navbar > ul li ul li:first-child > a {
+    border-radius: 3px 3px 0 0;
+}
+
+/* We don't want border in the last item in second menu level'*/
+.m-navbar > ul > li > ul > li:last-child {
+    border-bottom: 0px;
+}
+
+/* Third level */
+.m-navbar > ul > li > ul > li > ul{
+	position: absolute;
+	top: 0px;
+	left: 148px;
+}
+
+
+
+
+

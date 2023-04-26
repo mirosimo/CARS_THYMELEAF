@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!----------------------------------------------->
+<!-- View for adding new Car Brand into system -->
+<!----------------------------------------------->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <link type="text/css" th:href="@{/css/top_navbar.css}" rel="stylesheet"/>
+      <title th:text="#{app.alert.error-message}"></title>
+   </head>
+   <body>
+   		<div class="application-wrapper">
+   			<!-- Fragment - The very top part of application (logo, design pictures) -->
+   			<div class="top-part" th:include="fragments/top_part.html :: top_part">
+   			</div>   
+   			<div class= "middle-part"> 
+   				<!-- Fragment - Main menu -->
+	   			<div th:replace="fragments/top_nav :: navbar"></div>
+		   		<div class="content-part error-page">	
+		   			<div class="title-part" >		
+						<!-- <h1 th:text="#{app.alert.error-message}"></h1>  -->
+					</div>
+						   			
+	   				<!-- Fragment - Warning board -->
+	   				<div th:replace="fragments/page-warning-board.html :: page_warning_board"></div>
+	   				
+	   				<!-- The most likely reason of an error -->
+	   				<h2 class="error-reason" th:text="#{${apiCarException.getMessage()}}"></h2>
+	   				
+	   				<!-- TO DO -->
+	   				<!-- When will be done user management - Privileges, Roles -->
+	   				<!-- Than users with needed privileges (Admin, developers, etc...) 
+	   					 could display printstacktrace on error page -->		   							   					   		
+	   				<!-- <h4 class="error-reason" th:text="${apiCarException.getErrorMessageToStr()}"></h4> -->				   	
+		   		</div>	<!-- End content-part -->
+		   		
+   		</div> <!--  End of middle part -->
+   		<div class="footer-part">
+   		</div>  	
+   </div> <!-- End of application-wrapper -->	   		
+   </body>
+</html>

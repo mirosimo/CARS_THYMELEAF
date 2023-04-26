@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <link type="text/css" th:href="@{/css/top_navbar.css}" rel="stylesheet"/>
+      <title th:text="#{app.employee.detail.title}"></title>
+   </head>
+   <body>
+   		<div class="application-wrapper">
+   			<div class="top-part" th:include="fragments/top_part.html :: top_part">
+   			</div>   
+   			<div class= "middle-part">  
+		   		<div th:replace="fragments/top_nav :: navbar"></div>  <!-- Top menu -->
+		   		<div class="content-part">	
+		   			<div class="title-part" >		
+						<h1 th:text="#{app.employee.detail.title}"></h1>
+					</div>
+	   			    
+		   			<form action="#" th:action="@{/employee-save}" th:object="${employee}" method="POST" enctype="multipart/form-data">
+		   				<div class="grid-container-base grid-container-five-col employee-detail">
+		   					<!-- Header of employee detail - big sized Employee name followed by employee photograph -->
+		   					<div class="employee-detail-first-row-wrapper">
+			   					<label class="grid-col-span-4 employee-detail-name grid-center-cell" 
+			   						th:text="*{firstName} + ' ' + *{lastName}"></label>
+			   					<div class="emp-detail-img-wrapper">			   					
+			   						<img class="empployee-detail-img" th:object="${imgUtil}" 	   					
+			   							th:src="'data:image/png;base64,' + ${imgUtil.getImgData(employee.employeeImgSet[0].img)}" />
+			   					</div>
+		   					</div>
+		   					<!-- 
+		   						Address area with employee address info 
+		   					-->
+		   						<div></div>
+								<div></div>
+								<div></div>
+								<!-- separator - creates design line with text inside -------- TEXT ------ -->
+			   					<div class="separator grid-col-span-2">Adresa</div>
+			   					
+				   				<!-- Street name -->
+				   				<div></div>
+								<div></div>							
+								<div></div>    <!-- divide column -->
+								<label th:text="#{app.address.new.street}"></label>
+								<label class="address-label" th:text="*{addressSet[0].street}"></label>
+								
+								<!-- Street number -->
+								<div></div>
+								<div></div>							
+								<div></div>    <!-- divide column -->
+								<label th:text="#{app.address.new.street-number}"></label>
+								<label class="address-label" th:text="*{addressSet[0].streetNumber}"></label>
+								
+								<!-- City -->
+								<div></div>
+								<div></div>							
+								<div></div>    <!-- divide column -->
+								<label th:text="#{app.address.new.city}"></label>
+								<label class="address-label" th:text="*{addressSet[0].city}"></label>
+								
+								<!-- Zip Code -->
+								<div></div>
+								<div></div>							
+								<div></div>    <!-- divide column -->
+								<label th:text="#{app.address.new.zip-code}"></label>
+								<label class="address-label" th:text="*{addressSet[0].zipCode}"></label>
+								
+								<!-- Country -->
+								<div></div>
+								<div></div>							
+								<div></div>    <!-- divide column -->
+								<label th:text="#{app.address.new.country}"></label>
+								<label class="address-label" th:text="*{addressSet[0].country.name}"></label>
+								
+								<!-- separator -->								
+		   						<div></div>
+								<div></div>
+								<div class="address-bottom-separator"></div>
+								<div></div>
+								<div></div>
+		   							   					
+		   					<label th:text="#{app.employee.new.degree}"></label>
+		   					<!-- degree is type Enum -->
+			   				<input class="data-column" type="text" size="18" th:value="*{degree.getNiceValue()}">  
+			   				<div></div>
+			   				<div></div>
+			   				<div></div>
+			   				
+			            	<label th:text="#{app.employee.new.first-name}"></label>
+			   				<input class="data-column" type="text" size="18" th:field="*{firstName}">
+			   				<div></div>
+			   				<label th:text="#{app.employee.new.last-name}"></label>
+			   				<input class="data-column" type="text" size="25" th:field="*{lastName}">
+			   				
+			   				<label th:text="#{app.employee.new.birthdate}"></label>
+			   				<input class="data-column" type="text" size="18" 
+			   					th:value="*{#dates.day(birthDate)} + '.'+
+			   								*{#dates.month(birthDate)}+'.'+
+			   								*{#dates.year(birthDate)}">
+			   				<div></div>
+			   				<label th:text="#{app.employee.detail.age}"></label>  
+			   				<input class="data-column" type="text" size="25">		<!-- In progress ... -->
+			   				
+			   				<label th:text="#{app.employee.new.date-of-employement}"></label>
+			   				<input class="data-column" type="text" size="18" 
+			   					th:value="*{#dates.day(employeementDate)} + '.'+
+			   								*{#dates.month(employeementDate)}+'.'+
+			   								*{#dates.year(employeementDate)}">
+			   				<div></div>
+			   				<label th:text="#{app.employee.detail.years-in-company}"></label>  
+			   				<input class="data-column" type="text" size="25">		<!-- In progress ... -->
+			   				
+			   				<label th:text="#{app.employee.new.department}"></label>
+			   				<input class="data-column" type="text" size="25" th:field="*{department.name}">		   				
+							<div></div>
+							<label th:text="#{app.employee.new.country}"></label>
+							<input class="data-column" type="text" size="25" >  <!-- In progress ... -->								   				
+							
+							<label th:text="#{app.employee.new.work-position}"></label>
+							<input class="data-column" type="text" size="25" th:field="*{workPosition.name}">
+							<div></div>
+							<label th:text="#{app.employee.new.education}"></label>
+							<input class="data-column" type="text" size="25" th:field="*{education.name}">																		
+							
+							<label th:text="#{app.employee.new.email}"></label>
+			   				<input class="data-column" type="text" size="18"th:field="*{email}">
+			   				<div></div>
+			   				<label th:text="#{app.employee.new.mobile-phone}"></label>
+			   				<input class="data-column" type="text" size="25" th:field="*{mobilePhone}">
+							
+							<!-- TODO Here will be area with list of employee educational courses -->
+			   			</div>   				   				   				   					   				
+		   			</form>
+		   		</div> <!-- End of content-part -->	
+   			</div> <!--  End of middle part -->
+   			<div class="footer-part">
+   			</div>  		
+   </div> <!-- End of application-wrapper -->    		
+   </body>
+</html>

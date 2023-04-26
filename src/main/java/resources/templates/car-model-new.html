@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<!----------------------------------------------->
+<!-- View for adding new Car Model into system -->
+<!----------------------------------------------->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <link type="text/css" th:href="@{/css/top_navbar.css}" rel="stylesheet"/>
+      <title th:text="#{app.car-model.new.title}"></title>
+   </head>
+   <body>
+   		<div class="application-wrapper">
+   			<!-- Fragment - The very top part of application (logo, design pictures) -->
+   			<div class="top-part" th:include="fragments/top_part.html :: top_part">
+   			</div>
+   			<div class= "middle-part">   
+   				<!-- Fragment - Main menu -->
+		   		<div th:replace="fragments/top_nav :: navbar"></div>
+		   		<div class="content-part">	
+		   			<div class="logo-part" >
+		   				<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(carModel.carBrand.getSmallLogoImg().img)}" />
+		   			</div>
+		   			<div class="title-part" >		
+						<h1 th:text="#{app.car-model.new.title}"></h1>
+					</div>
+	   				
+		   			<form action="#" th:action="@{/car-model-save}" th:object="${carModel}" method="POST" 
+		   					enctype="multipart/form-data">
+		   				<!-- Fragment - Warning board -->
+		   				<div th:replace="fragments/input_warning_board.html :: input_warning_board"></div>	
+		   				<div class="grid-container-base grid-container-three-col">
+		   					<!--  <label th:text="#{app.car-model.new.brand}"></label> -->		   		
+		   					<input class="text-input-box" type="hidden" size="18" 
+		   						th:value="*{carBrand.id}" th:field="*{carBrand}">				   				
+			   				<!-- th:text="*{carBrand.id} <select id="carbrand" name="carbrand" th:field="*{carBrand}">		   					
+							    	<option th:each="carBrand : ${listCarBrand}" 
+							    			th:value="${carBrand.id}" 
+							    			th:text="${carBrand.name}">
+							    	</option>						    						    
+							</select> -->
+																								   				
+							            
+			            	<label th:text="#{app.car-model.new.name}"></label>
+			   				<input class="text-input-box" type="text" size="18" th:field="*{name}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('name')}" 
+			   					th:errors="*{name}"></div></div>
+			   				
+			   				<label th:text="#{app.car-model.new.url-name}"></label>
+			   				<input class="text-input-box" type="text" size="18" th:field="*{urlName}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('urlName')}" 
+			   					th:errors="*{urlName}"></div></div>
+			   				
+			   				<label th:text="#{app.car-model.new.description-short}"></label>
+			   				<input class="text-input-box" type="text" size="25" th:field="*{descShort}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('descShort')}" 
+			   					th:errors="*{descShort}"></div></div>
+			   				
+			   				<label th:text="#{app.car-model.new.description-long}"></label>
+			   				<input class="text-input-box" type="text" size="25" th:field="*{descLong}">
+			   				<div><div class="view-input-warning" th:if="${#fields.hasErrors('descLong')}" 
+			   					th:errors="*{descLong}"></div></div>
+			   					
+			   				<label th:text="#{app.car-model.new.order}"></label>
+			   				<input class="text-input-box" type="text" size="25" th:field="*{entityOrder}">
+			   				<div></div> <!-- 3rd column -->
+			   				
+			   				<label th:text="#{app.car-model.new.car-model-img}"></label>
+							<input type="file" name="image" accept="image/*">	
+							<div></div> <!-- 3rd column -->	   						   				
+			   			</div>   
+			   			<div class="button-part">				   				   				   				
+			   				<button class="confirm-button" type="submit"
+			   					th:text="#{app.button.save}" ></button>
+		   				</div>
+		   			</form>
+		   		</div> <!-- End of content-part -->	
+	   		</div> <!--  End of middle part -->
+	   		<div class="footer-part">
+   			</div>     		
+   		</div> <!-- End of application-wrapper --> 
+   </body>
+</html>
