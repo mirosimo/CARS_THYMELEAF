@@ -1,8 +1,0 @@
-<div class="left-part" th:fragment="navbar">	
-	<h1 th:text="${testAttribute}"></h1>
-	<th:block th:each="item : *{menuItems}">
-		<div>
-			<a th:text="${item.itemName}" href=""></a>
-		</div>
-	</th:block>
-</div>
