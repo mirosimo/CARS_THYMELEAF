@@ -1,12 +1,12 @@
-package com.mirosimo.car_showroom.service;
+package mirosimo.car_showroom2.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mirosimo.car_showroom.model.WorkPosition;
-import com.mirosimo.car_showroom.repository.WorkPositionRepository;
+import mirosimo.car_showroom2.model.WorkPosition;
+import mirosimo.car_showroom2.repository.WorkPositionRepository;
 
 @Service
 public class WorkPositionService {

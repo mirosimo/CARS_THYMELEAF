@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.service;
+package mirosimo.car_showroom2.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mirosimo.car_showroom.exception.ApiCarException;
-import com.mirosimo.car_showroom.model.CarBrand;
-import com.mirosimo.car_showroom.repository.CarBrandRepository;
+import mirosimo.car_showroom2.exception.ApiCarException;
+import mirosimo.car_showroom2.model.CarBrand;
+import mirosimo.car_showroom2.repository.CarBrandRepository;
 
 @Service
 public class CarBrandService {

@@ -1,4 +1,5 @@
-package com.mirosimo.car_showroom.model;
+package mirosimo.car_showroom2.model;
+
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,6 +18,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
 /*
  * Relation between Car Model and Equipment Pack
  * 1 : N

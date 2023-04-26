@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.controller;
+package mirosimo.car_showroom2.controller;
 
 import java.io.IOException;
 
@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mirosimo.car_showroom.model.CarBrand;
-import com.mirosimo.car_showroom.model.CarBrandImg;
-import com.mirosimo.car_showroom.service.CarBrandService;
+import mirosimo.car_showroom2.model.CarBrand;
+import mirosimo.car_showroom2.model.CarBrandImg;
+import mirosimo.car_showroom2.service.CarBrandService;
+
+
 
 
 @Controller

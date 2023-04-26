@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.exception;
+package mirosimo.car_showroom2.exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

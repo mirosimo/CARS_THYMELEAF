@@ -1,13 +1,12 @@
-package com.mirosimo.car_showroom.repository;
-
-import org.springframework.stereotype.Repository;
-
-import com.mirosimo.car_showroom.model.MenuItem;
+package mirosimo.car_showroom2.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import mirosimo.car_showroom2.model.MenuItem;
 
 @Repository
 public interface MenuRepository extends JpaRepository<MenuItem, Long> {

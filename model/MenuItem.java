@@ -1,4 +1,7 @@
-package com.mirosimo.car_showroom.model;
+package mirosimo.car_showroom2.model;
+
+
+
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.controller;
+package mirosimo.car_showroom2.controller;
 
 import java.io.IOException;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mirosimo.car_showroom.Utils.ImageUtil;
-import com.mirosimo.car_showroom.model.Country;
-import com.mirosimo.car_showroom.service.CountryService;
+import mirosimo.car_showroom2.Utils.ImageUtil;
+import mirosimo.car_showroom2.model.Country;
+import mirosimo.car_showroom2.service.CountryService;
 
 @Controller
 public class CountryController {

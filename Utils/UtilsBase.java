@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.Utils;
+package mirosimo.car_showroom2.Utils;
 
 public class UtilsBase {
 	public static boolean isLong(String strNum) {

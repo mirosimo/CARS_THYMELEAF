@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.controller;
+package mirosimo.car_showroom2.controller;
 
 public class RoleController {
 

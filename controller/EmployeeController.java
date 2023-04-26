@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.controller;
+package mirosimo.car_showroom2.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,24 +14,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mirosimo.car_showroom.Utils.ImageUtil;
-import com.mirosimo.car_showroom.model.Address;
-import com.mirosimo.car_showroom.model.Country;
-import com.mirosimo.car_showroom.model.Course;
-import com.mirosimo.car_showroom.model.Department;
-import com.mirosimo.car_showroom.model.Education;
-import com.mirosimo.car_showroom.model.Employee;
-import com.mirosimo.car_showroom.model.Employee.Degree;
-import com.mirosimo.car_showroom.model.EmployeeCourse;
-import com.mirosimo.car_showroom.model.EmployeeImg;
-import com.mirosimo.car_showroom.model.WorkPosition;
-import com.mirosimo.car_showroom.service.CountryService;
-import com.mirosimo.car_showroom.service.CourseService;
-import com.mirosimo.car_showroom.service.DepartmentService;
-import com.mirosimo.car_showroom.service.EducationService;
-import com.mirosimo.car_showroom.service.EmployeeCourseService;
-import com.mirosimo.car_showroom.service.EmployeeService;
-import com.mirosimo.car_showroom.service.WorkPositionService;
+import mirosimo.car_showroom2.Utils.ImageUtil;
+import mirosimo.car_showroom2.model.Address;
+import mirosimo.car_showroom2.model.Country;
+import mirosimo.car_showroom2.model.Course;
+import mirosimo.car_showroom2.model.Department;
+import mirosimo.car_showroom2.model.Education;
+import mirosimo.car_showroom2.model.Employee;
+import mirosimo.car_showroom2.model.Employee.Degree;
+import mirosimo.car_showroom2.model.EmployeeCourse;
+import mirosimo.car_showroom2.model.EmployeeImg;
+import mirosimo.car_showroom2.model.WorkPosition;
+import mirosimo.car_showroom2.service.CountryService;
+import mirosimo.car_showroom2.service.CourseService;
+import mirosimo.car_showroom2.service.DepartmentService;
+import mirosimo.car_showroom2.service.EducationService;
+import mirosimo.car_showroom2.service.EmployeeCourseService;
+import mirosimo.car_showroom2.service.EmployeeService;
+import mirosimo.car_showroom2.service.WorkPositionService;
 
 
 @Controller

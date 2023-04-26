@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.controller;
+package mirosimo.car_showroom2.controller;
 
 import javax.validation.Valid;
 
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.mirosimo.car_showroom.Utils.ImageUtil;
-import com.mirosimo.car_showroom.model.CarEngine;
-import com.mirosimo.car_showroom.service.CarBrandService;
-import com.mirosimo.car_showroom.service.CarEngineService;
-import com.mirosimo.car_showroom.service.CarEquipmentPackService;
+import mirosimo.car_showroom2.Utils.ImageUtil;
+import mirosimo.car_showroom2.model.CarEngine;
+import mirosimo.car_showroom2.service.CarBrandService;
+import mirosimo.car_showroom2.service.CarEngineService;
+import mirosimo.car_showroom2.service.CarEquipmentPackService;
 
 
 @Controller

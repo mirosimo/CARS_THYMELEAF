@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.service;
+package mirosimo.car_showroom2.service;
 
 
 import java.util.List;
@@ -6,8 +6,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.mirosimo.car_showroom.model.CarEquipmentPack;
-import com.mirosimo.car_showroom.repository.CarEquipmentPackRepository;
+
+import mirosimo.car_showroom2.model.CarEquipmentPack;
+import mirosimo.car_showroom2.repository.CarEquipmentPackRepository;
 
 @Service
 public class CarEquipmentPackService {

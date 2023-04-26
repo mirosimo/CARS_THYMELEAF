@@ -1,8 +1,10 @@
-package com.mirosimo.car_showroom.repository;
+package mirosimo.car_showroom2.repository;
+
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.mirosimo.car_showroom.model.Country;
+import mirosimo.car_showroom2.model.Country;
 
 public interface CountryRepository extends JpaRepository<Country, Long>{
 

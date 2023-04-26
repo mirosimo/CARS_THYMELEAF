@@ -1,8 +1,9 @@
-package com.mirosimo.car_showroom.controller;
+package mirosimo.car_showroom2.controller;
 
 import java.io.IOException;
 
 import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,17 +15,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mirosimo.car_showroom.Utils.ImageUtil;
-import com.mirosimo.car_showroom.exception.ApiCarException;
-import com.mirosimo.car_showroom.model.CarEngine;
-import com.mirosimo.car_showroom.model.CarEquipmentPack;
-import com.mirosimo.car_showroom.model.CarEquipmentPackCarEngine;
-import com.mirosimo.car_showroom.model.CarEquipmentPackImg;
-import com.mirosimo.car_showroom.service.CarBrandService;
-import com.mirosimo.car_showroom.service.CarEngineService;
-import com.mirosimo.car_showroom.service.CarEquipmentPackCarEngineService;
-import com.mirosimo.car_showroom.service.CarEquipmentPackService;
-import com.mirosimo.car_showroom.service.CarModelService;
+import mirosimo.car_showroom2.Utils.ImageUtil;
+import mirosimo.car_showroom2.exception.ApiCarException;
+import mirosimo.car_showroom2.model.CarEngine;
+import mirosimo.car_showroom2.model.CarEquipmentPack;
+import mirosimo.car_showroom2.model.CarEquipmentPackCarEngine;
+import mirosimo.car_showroom2.model.CarEquipmentPackImg;
+import mirosimo.car_showroom2.service.CarBrandService;
+import mirosimo.car_showroom2.service.CarEngineService;
+import mirosimo.car_showroom2.service.CarEquipmentPackCarEngineService;
+import mirosimo.car_showroom2.service.CarEquipmentPackService;
+import mirosimo.car_showroom2.service.CarModelService;
 
 @Controller
 public class CarEquipmentPackController {

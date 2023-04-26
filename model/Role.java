@@ -1,4 +1,5 @@
-package com.mirosimo.car_showroom.model;
+package mirosimo.car_showroom2.model;
+
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
 
 @Table
 @Entity
@@ -41,12 +43,7 @@ public class Role {
 		this.name = name;
 	}
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 	
 	public long getId() {
 		return id;
@@ -86,5 +83,13 @@ public class Role {
 	@Override
 	public int hashCode() {
 		return 23;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

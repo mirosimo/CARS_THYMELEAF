@@ -1,12 +1,12 @@
-package com.mirosimo.car_showroom.service;
+package mirosimo.car_showroom2.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mirosimo.car_showroom.model.Role;
-import com.mirosimo.car_showroom.repository.RoleRepository;
+import mirosimo.car_showroom2.model.Role;
+import mirosimo.car_showroom2.repository.RoleRepository;
 
 @Service
 public class RoleService {

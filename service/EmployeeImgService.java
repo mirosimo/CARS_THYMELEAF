@@ -1,11 +1,11 @@
-package com.mirosimo.car_showroom.service;
+package mirosimo.car_showroom2.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.mirosimo.car_showroom.model.EmployeeImg;
-import com.mirosimo.car_showroom.repository.EmployeeImgRepository;
+import mirosimo.car_showroom2.model.EmployeeImg;
+import mirosimo.car_showroom2.repository.EmployeeImgRepository;
 
 public class EmployeeImgService {
 	@Autowired

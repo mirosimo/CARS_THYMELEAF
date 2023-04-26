@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.controller;
+package mirosimo.car_showroom2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.mirosimo.car_showroom.model.Course;
-import com.mirosimo.car_showroom.service.CourseService;
+import mirosimo.car_showroom2.model.Course;
+import mirosimo.car_showroom2.service.CourseService;
 
 @Controller
 public class CourseController {

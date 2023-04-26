@@ -1,12 +1,12 @@
-package com.mirosimo.car_showroom.service;
+package mirosimo.car_showroom2.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mirosimo.car_showroom.model.Department;
-import com.mirosimo.car_showroom.repository.DepartmentRepository;
+import mirosimo.car_showroom2.model.Department;
+import mirosimo.car_showroom2.repository.DepartmentRepository;
 
 @Service
 public class DepartmentService {

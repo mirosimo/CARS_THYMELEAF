@@ -1,4 +1,5 @@
-package com.mirosimo.car_showroom.model;
+package mirosimo.car_showroom2.model;
+
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/* Security is just now in development state ... */
 @Entity
 @Table(name = "USERS")
 public class User {
@@ -31,8 +33,19 @@ public class User {
     private String username;
     private String password;
     private String email;  
+    private String role;
+    private boolean active;
  
-    @OneToMany(mappedBy = "primaryKey.user",
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	@OneToMany(mappedBy = "primaryKey.user",
             cascade = CascadeType.ALL)
     private Set<UserRole> userRoles = new HashSet<UserRole>();
  
@@ -73,6 +86,14 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+    public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 	public Set<UserRole> getUserRoles() {

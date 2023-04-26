@@ -1,10 +1,10 @@
-package com.mirosimo.car_showroom.repository;
+package mirosimo.car_showroom2.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.mirosimo.car_showroom.model.CarModel;
+import mirosimo.car_showroom2.model.CarModel;
 
 public interface CarModelRepository extends  JpaRepository<CarModel, Long>{
 	public List<CarModel> findByCarBrand_id(Long id);

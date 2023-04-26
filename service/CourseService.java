@@ -1,4 +1,4 @@
-package com.mirosimo.car_showroom.service;
+package mirosimo.car_showroom2.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import com.mirosimo.car_showroom.model.Course;
-import com.mirosimo.car_showroom.model.Employee;
-import com.mirosimo.car_showroom.repository.CourseRepository;
+import mirosimo.car_showroom2.model.Course;
+import mirosimo.car_showroom2.repository.CourseRepository;
 
 @Service
 public class CourseService {

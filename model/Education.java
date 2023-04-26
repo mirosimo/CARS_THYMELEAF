@@ -1,4 +1,5 @@
-package com.mirosimo.car_showroom.model;
+package mirosimo.car_showroom2.model;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+
 
 @Entity
 @Table
