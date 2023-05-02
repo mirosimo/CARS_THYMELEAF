@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <title>List of car images</title>
+   </head>
+   <body>
+       <div class="cars-grid" th:each="carImg : ${listCarImg}" th:object="${imgUtil}">		   						   						
+			<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(carImg.img)}" />
+	   </div>	      				          					      			    		
+   </body>
+   
+</html>
