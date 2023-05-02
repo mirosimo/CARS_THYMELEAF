@@ -114,8 +114,7 @@ public class CarEquipmentPackController {
 			carEquipmentPackCarEngine.setActive(true);
 			carEquipmentPackCarEngineService.saveEntity(carEquipmentPackCarEngine);
 		}
-		
-		
+				
 		return "redirect:/car-equipment-pack-list/"+carEquipmentPack.getCarModel().getCarBrand().getUrlName() + 
 				"/"+ carEquipmentPack.getCarModel().getUrlName();
 	}

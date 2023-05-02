@@ -37,9 +37,8 @@ public class CarBrandController {
 	
 	/* View for adding new car brand */
 	@GetMapping("/car-brand-new")
-	public String newCarBrandView(Model model) {
-		CarBrand carBrand = new CarBrand();
-		model.addAttribute("carBrand", carBrand);		
+	public String newCarBrandView(Model model) {		
+		model.addAttribute("carBrand", new CarBrand());		
 		return "car-brand-new";
 	} 
 	
@@ -72,11 +71,5 @@ public class CarBrandController {
 		return "redirect:/car-brand-list";
 	}
 	
-	/* Just for test purposes */
-	@GetMapping("/test-me-baby/{id}")
-	public void testMe(@PathVariable (value="id") long id, Model model) {
-		CarBrand carBrand = new CarBrand();
-		carBrand = carBrandService.getEntityById(id);		
-		//return "car-brand-new";
-	}
+
 }

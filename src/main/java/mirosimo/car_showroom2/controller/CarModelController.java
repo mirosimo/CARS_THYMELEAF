@@ -48,7 +48,7 @@ public class CarModelController {
 	/* View for adding new car model */
 	@GetMapping("/car-model-new/{brand-url-name}")
 	public String newCarModelView(Model model, 
-			@PathVariable (value="brand-url-name") String brandUrlName) {
+			@PathVariable (value="brand-url-name") String brandUrlName) {				
 		CarModel carModel = new CarModel();
 		CarBrand carBrand = carBrandService.findEntityByCarBrandUrlName(brandUrlName);
 		carModel.setCarBrand(carBrand);
@@ -59,11 +59,11 @@ public class CarModelController {
 	
 	@PostMapping("/car-model-save")
 	public String saveCarModel(@ModelAttribute("carModel") CarModel carModel, 
-			@RequestParam("image") MultipartFile file) throws IOException {
-		byte[] imgData = file.getBytes();
+			@RequestParam("image") MultipartFile fileModel) throws IOException {
+		byte[] imgModelBytes = fileModel.getBytes();
 		
 		CarModelImg carModelImg = new CarModelImg();
-		carModelImg.setImg(imgData);				
+		carModelImg.setImg(imgModelBytes);				
 		
 		carModel.getCarModelImgs().add(carModelImg);					
 		this.carModelService.saveEntity(carModel);

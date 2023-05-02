@@ -28,9 +28,20 @@ public class Role {
 			strategy = GenerationType.SEQUENCE,
 			generator = "role_sequence"
 	)
-	@Column(name="ROLE_ID")
+	@Column(name="ID")
 	private long id;
+	
+	
+	// This field is here because of filter purposes. 
+	// Available values could be ADMIN, SELLER, CUSTOMER, etc 
+	// Than is possible filter roles related with value in this field
+	private String roleType;
+	
 	private String name;
+	
+	private String desc_short;
+	
+	private String desc_long;
 	
 	@OneToMany(mappedBy = "primaryKey.role",
             cascade = CascadeType.ALL)
@@ -92,4 +103,29 @@ public class Role {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getDesc_short() {
+		return desc_short;
+	}
+
+	public void setDesc_short(String desc_short) {
+		this.desc_short = desc_short;
+	}
+
+	public String getDesc_long() {
+		return desc_long;
+	}
+
+	public void setDesc_long(String desc_long) {
+		this.desc_long = desc_long;
+	}
+	
+	public String getRoleType() {
+		return roleType;
+	}
+
+	public void setRoleType(String roleType) {
+		this.roleType = roleType;
+	}
+
 }
