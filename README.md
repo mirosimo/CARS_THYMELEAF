@@ -46,7 +46,10 @@ And I also would like to implement **two step login** --> for practicing work wi
 
 
 ### Authorization 
-User Roles
+For roles was created entity Role. Relation between **User** and **Role** is M : N. Through the entity **UserRole** we can finde roles assigned to particular User. 
+
+
+
 
 
 ## Multilanguage
