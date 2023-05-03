@@ -99,4 +99,4 @@ In the near future will be done :
 
 + User management - Privileges, Roles 
 + Error logging
-+ Fundamental Change  - When I'll go through the Spring Security than will come New Version - Instead of server side rendering - Thymeleaf will be used Client side. On client probably REACT. I would like practice using JSON object, using restController instead of Controller and creating Views on client side. 
++ Fundamental Change  - When I'll go through the Spring Security than will come New Version using client side rendering - probably React - Instead of server side rendering - Thymeleaf (Why I used Thymeleaf on beginning - it just happend) . I would like practice using JSON object, using restController instead of Controller and creating Views on client side. 
