@@ -8,8 +8,8 @@
 
 ## Description
 
-Here appears source code of my training application in Spring Boot on which I have been working for last days. 
-At this time the applications is consist of about 30 entities and similar number of tables in database. 
+Here appears source code of sample application in Spring Boot on which I have been working for last days. 
+At this moment the applications is consist of about 30 entities and similar number of tables in database. 
 For now is in progress stuff around car configuration. Entities - CarBrand, CarModel, CarEquipmentPack, CarEngine, etc.
 And the other branch where I am working on is around human resources - entity Employee, and many relational entities.
 I was created 3 ER diagrams 
@@ -24,8 +24,26 @@ Also in folder xxx-documentation you can find some view examples - scrennshots. 
 ## Implemented features
 For now there are implemented things like:
 Inserting, Updating, Deleting records, Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management,  Multilanguage, 
-Views Validation, Just now in progress - JWT - authorization, authentification. After that will be implementing User Roles, Privileges management.
+Views Validation, Authentification, Authorization - Users, Roles management
 Images are saved as blob in db, Thymeleaf, Css.
+
+
+##Spring Security
+Spring security contains bunch of stuff - to comprehend all the main parts how works together is quite difficuilt - it takes some time. Things like:
+
++ SecurityFilterChain
++ Authentication Provider
++ UserDetailsService
++
++
+SCRlf 
+
+##Authentification
+
+
+##Authorization 
+User Roles
+
 
 ## Multilanguage
 + messages.properties
@@ -73,5 +91,4 @@ Main CSS file – resources/static/css/app_style.css
 In the near future will be done :
 
 + User management - Privileges, Roles 
-+ Authentication - JWT
 + Error logging
