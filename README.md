@@ -28,20 +28,21 @@ Views Validation, Authentification, Authorization - Users, Roles management
 Images are saved as blob in db, Thymeleaf, Css.
 
 
-##Spring Security
-Spring security contains bunch of stuff - to comprehend all the main parts how works together is quite difficuilt - it takes some time. Things like:
+## Spring Security
+Spring security contains bunch of stuff - to comprehend all the main parts how works together is quite difficuilt - it takes some time. E.g. Things like:
 
 + SecurityFilterChain
-+ Authentication Provider
++ ProviderManager
++ AuthenticationProvider
++ SecurityContextHolder
 + UserDetailsService
-+
-+
-SCRlf 
++ etc...
 
-##Authentification
+Just now is in development state and during the time are implementing new things and features related to Authentification and Authorization. Detail of  actual state are described below.
+### Authentification
 
 
-##Authorization 
+### Authorization 
 User Roles
 
 
