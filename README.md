@@ -2,7 +2,7 @@
 
 ## Base params of application
 + Spring Boot 2.7.6
-+ Java 11
++ Java 17
 + DB: Oracle 19
 + Template engine: Thymeleaf
 
@@ -29,7 +29,7 @@ Images are saved as blob in db, Thymeleaf, Css.
 
 
 ## Spring Security
-Spring security contains bunch of stuff - to comprehend all the main parts how works together is quite difficuilt - it takes some time. E.g. Things like:
+Spring security contains bunch of stuff - to comprehend all the main parts and principles how everithing works together is quite challenging - it takes some time. E.g. Things like:
 
 + SecurityFilterChain
 + ProviderManager
