@@ -47,7 +47,7 @@ And I also would like to implement **two step login** --> for practicing work wi
 
 ### Authorization 
 For roles was created entity Role. Relation between **User** and **Role** is M : N. Through the entity **UserRole** we can finde roles assigned to particular User. 
-
+Relation **End Point** - **assigned ROLES** is hardcoded in config file (HttpSecurity). Later will be done more sophisticated role management - Roles hierarchy, priviledges.
 
 
 
