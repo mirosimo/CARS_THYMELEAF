@@ -40,6 +40,9 @@ Spring security contains bunch of stuff - to comprehend all the main parts how w
 
 Just now is in development state and during the time are implementing new things and features related to Authentification and Authorization. Detail of  actual state are described below.
 ### Authentification
+User details are fetched from database - table **Users** - username, password, email, ... . Password is hasshed by BCryptPasswordEncoder. 
+For authentification is used username and password. In a few days will be add authentication possibility using SSO - OpenID (Google, Facebook). 
+And I also would like to implement **two step login** --> for practicing work with more AuthenticationProviders. 
 
 
 ### Authorization 
