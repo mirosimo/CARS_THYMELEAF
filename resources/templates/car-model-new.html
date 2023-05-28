@@ -15,21 +15,27 @@
    			<div class="top-part" th:include="fragments/top_part.html :: top_part">
    			</div>
    			<div class= "middle-part">   
+   				<!-- Strip with login user info, in future language switcher, etc... -->
+   				<div class="info-strip" th:include="fragments/info-strip.html :: info-strip"></div>
+   				
    				<!-- Fragment - Main menu -->
-		   		<div th:replace="fragments/top_nav :: navbar"></div>
-		   		<div class="content-part">	
-		   			<div class="logo-part" >
-		   				<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(carModel.carBrand.getSmallLogoImg().img)}" />
-		   			</div>
+		   		<!-- <div th:replace="fragments/top_nav :: navbar"></div> -->
+		   		<div class="content-part">
+		   			<!-- Viev Title -->
 		   			<div class="title-part" >		
 						<h1 th:text="#{app.car-model.new.title}"></h1>
 					</div>
+					
+					<!-- Car Brand LOGO -->		
+		   			<div class="logo-part" >
+		   				<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(carModel.carBrand.getSmallLogoImg().img)}" />
+		   			</div>		   			
 	   				
 		   			<form action="#" th:action="@{/car-model-save}" th:object="${carModel}" method="POST" 
 		   					enctype="multipart/form-data">
 		   				<!-- Fragment - Warning board -->
 		   				<div th:replace="fragments/input_warning_board.html :: input_warning_board"></div>	
-		   				<div class="grid-container-base grid-container-three-col">
+		   				<div class="grid-container-base grid-container-three-col add-new-part">
 		   					<!--  <label th:text="#{app.car-model.new.brand}"></label> -->		   		
 		   					<input class="text-input-box" type="hidden" size="18" 
 		   						th:value="*{carBrand.id}" th:field="*{carBrand}">				   				

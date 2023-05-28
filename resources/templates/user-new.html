@@ -12,13 +12,17 @@
    <body>
    		<div class="application-wrapper">   			
    			<div class= "middle-part">  
+   				<!-- Strip with login user info, in future language switcher, etc... -->
+   				<div class="info-strip" th:include="fragments/info-strip.html :: info-strip"></div>
+   				
 		   		<div class="content-part">	
+		   			<!-- View Title -->
 		   			<div class="title-part" >		
 						<h1>New User</h1>
 					</div>	   					   					
 	   					   				
 		   			<form action="#" th:action="@{/save-user}" th:object="${appUser}" method="POST">   					   					   						
-		   				<div class="grid-container-base grid-container-two-col">		   					
+		   				<div class="grid-container-base grid-container-two-col add-new-part">		   					
 		   					            
 			            	<label>User name</label>			            				            		
 			   				<input class="data-column" type="text" size="18"th:field="*{username}">			   				

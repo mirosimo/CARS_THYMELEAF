@@ -10,22 +10,24 @@
    			<div class="top-part" th:include="fragments/top_part.html :: top_part">
    			</div>   			
    			<div class= "middle-part">
-   			   
-	   			<div th:replace="fragments/top_nav :: navbar"></div> <!-- Top menu -->
-	   		
-	   		
+   			    <!-- Strip with login user info, in future language switcher, etc... -->
+   				<div class="info-strip" th:include="fragments/info-strip.html :: info-strip"></div>
+   				
+	   			<!--  <div th:replace="fragments/top_nav :: navbar"></div>  Top menu -->
+	   			   		
 		   		<div class="content-part">
+		   			<!-- View Title -->
+		   			<div class="title-part" >		
+						<h1 th:text="#{app.cars-grid-model-title}"></h1>
+					</div>
+					
 		   			<!-- Logo of car brand (Skoda, Ford,...) -->
 			   		<div class="logo-part" > 
 			   			<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(listEntities[0].carBrand.getSmallLogoImg().img)}" />
 			   		</div>
 			   		
-		   			<div class="title-part" >		
-						<h1 th:text="#{app.cars-grid-model-title}"></h1>
-					</div>								   			
-	   				
 	   				<!-- Grid with car images and description <div class="cars-grid-cell-container"> -->
-		   			<div class="cars-grid">
+		   			<div class="cars-grid list-part">
 		   				<th:block th:each="carModel : ${listEntities}" th:object="${carModel}">
 		   					
 		   					<!-- Each cell in grid contains its own subgrid - this subrgrid has one column and two rows.

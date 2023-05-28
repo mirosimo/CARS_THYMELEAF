@@ -13,15 +13,21 @@
 	   <div class="top-part" th:include="fragments/top_part.html :: top_part">
 	   </div>
 	   <div class= "middle-part">    
+	   		<!-- Strip with login user info, in future language switcher, etc... -->
+   			<div class="info-strip" th:include="fragments/info-strip.html :: info-strip"></div>
+   			
 	   		<div th:replace="fragments/top_nav :: navbar"></div>
-		    <div class="content-part">	
-		   		<div class="logo-part" >
-		   			<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(listEntities[0].carBrand.getSmallLogoImg().img)}" />
-		   		</div>
+		    <div class="content-part">
+		    	<!-- View Title -->
 	   			<div class="title-part" >		
 					<h1 th:text="#{app.car-model.list.title}"></h1>
 				</div>
-				<div class="table-part">			  			    	
+				
+				<!-- Car Brand LOGO -->	
+		   		<div class="logo-part" >
+		   			<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(listEntities[0].carBrand.getSmallLogoImg().img)}" />
+		   		</div>		   		
+				<div class="table-part list-part">			  			    	
 		      		<table cellspacing="0" cellpadding="0">
 		      			<tr class="row_head">	      				
 	      					<th th:text="#{app.record.id}"></th>

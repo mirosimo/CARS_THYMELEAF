@@ -14,7 +14,8 @@
    </head>
    <body>
    <div class="application-wrapper">
-	   <div class= "middle-part">   
+	   <div class= "middle-part"> 
+	   		<div class="info-strip" th:include="fragments/info-strip.html :: info-strip"></div>  
 	   		<div class="content-part equipment-pack-engines car-equipment-pack-list">	
 	   			<div class="title-part" >		
 					<h1>Equipment pack - Engines list</h1>
@@ -31,12 +32,13 @@
 				</div>
 				
 				<!-- Car model img -->
-				<div class="car-model-img">
+				<div class="car-preview-img">
 					<img th:src="'data:image/png;base64,' + ${imgUtil
 	   								.getImgData(listEntities[0].carModel.carModelImgs[0].img)}" />
 	   			</div>
 				
-				<th:block th:each="equipmentPack : ${listEntities}" th:object="${equipmentPack}">
+				<div class="more-lists-part">
+				<th:block class="more-lists-part" th:each="equipmentPack : ${listEntities}" th:object="${equipmentPack}">
 					<br/>
 					<h2 th:text="*{name}"></h2>
 					<div class="table-part">			  			    	
@@ -69,6 +71,7 @@
 			      		</table>
 		      		</div>
 		      	</th:block>
+		      	</div>
       		</div>  <!-- End content-part -->     		
    		</div> <!--  End of middle part -->   		 
 	   	<div class="footer-part">

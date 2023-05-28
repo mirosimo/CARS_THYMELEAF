@@ -8,11 +8,16 @@
    <body>
    <div class="whole-page">
 	   <div class="top-part"></div>   	
-	   <div th:replace="fragments/left_nav :: navbar"></div>
-	   <div class="main-part">	
+	   <!--  <div th:replace="fragments/left_nav :: navbar"></div> -->
+	   <div class="main-part">
+	   		<!-- Strip with login user info, in future language switcher, etc... -->
+   			<div class="info-strip" th:include="fragments/info-strip.html :: info-strip"></div>
+   				
+	   		<!-- View Title -->	
    			<div class="title_part" >		
 				<h1>Zaměstnanci - Vzdělávací kurzy</h1>
 			</div>
+			
 			<div class="table_part">			  			    	
 	      		<table cellspacing="0" cellpadding="0">
 	      			<tr class="row_head">	      				

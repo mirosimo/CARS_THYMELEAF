@@ -11,12 +11,17 @@
    </head>
    <body>
    <div class="application-wrapper">
-	   <div class= "middle-part">	   		
+	   <div class= "middle-part">	
+	   		<!-- Strip with login user info, in future language switcher, etc... -->
+   			<div class="info-strip" th:include="fragments/info-strip.html :: info-strip"></div>
+   			   		
 		   <div class="content-part">	
+		   		<!-- View Title -->
 	   			<div class="title-part" >		
 					<h1>Roles List</h1>
 				</div>
-				<div class="table-part">			  			    	
+				
+				<div class="table-part list-part">			  			    	
 		      		<table cellspacing="0" cellpadding="0">
 		      			<tr class="row_head">	      				
 	      					<th>ID</th>

@@ -14,21 +14,26 @@
    			<div class="top-part" th:include="fragments/top_part.html :: top_part">
    			</div>   
    			<div class= "middle-part"> 
-   				<!-- Fragment - Main menu -->
-	   			<div th:replace="fragments/top_nav :: navbar"></div>
-		   		<div class="content-part">	
+		   		<div class="content-part">
+		   			<!-- View Title -->	
 		   			<div class="title-part" >		
 						<h1 th:text="#{app.login.title}"></h1>
 					</div>
-	   			
-		   			<form action="#" th:action="@{/login}" method="POST" >		   				
+					
+					<!-- Login error board -->
+	   				<div th:if="${param.error}">
+    					<!-- Fragment - Warning board -->
+		   				<div th:replace="fragments/login_warning_board.html :: login_warning_board"></div>
+					</div>
+					
+		   			<form action="#" th:action="@{/mirosimo-login}" method="POST" >		   				
 		   					
-		   				<div class="grid-container-base grid-container-two-col">            
+		   				<div class="grid-container-base grid-container-two-col add-new-part">            
 			            	<label th:text="#{app.login.name}"></label>
-			   				<input class="text-input-box" type="text" id="username" name="username" size="18" >
+			   				<input class="text-input-box" type="text" id="username" name="usname" size="18" >
 			   					
 			   				<label th:text="#{app.login.password}"></label>
-			   				<input class="text-input-box" type="text" id="password" name="password" size="18" >		   							   						   						   				
+			   				<input class="text-input-box" type="text" id="password" name="passwd" size="18" >		   							   						   						   				
 			   			</div> 
 			   			<div class="button-part">  				   				   				   				
 			   				<button class="confirm-button" type="submit"

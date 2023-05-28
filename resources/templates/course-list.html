@@ -12,13 +12,18 @@
    <div class="application-wrapper">
 	   <div class="top-part" th:include="fragments/top_part.html :: top_part">
 	   </div>
-	   <div class= "middle-part">   
-	   	   <div th:replace="fragments/top_nav :: navbar"></div>
-		   <div class="content-part">	   		   		
+	   <div class= "middle-part">
+	   		<!-- Strip with login user info, in future language switcher, etc... -->
+   			<div class="info-strip" th:include="fragments/info-strip.html :: info-strip"></div>
+   			   
+	   	   <!-- <div th:replace="fragments/top_nav :: navbar"></div> -->
+		   <div class="content-part">	
+		   		<!-- View Title -->   		   		
 	   			<div class="title-part" >		
 					<h1 th:text="#{app.course.list.title}"></h1>
 				</div>
-				<div class="table-part">			  			    	
+				
+				<div class="table-part list-part">			  			    	
 		      		<table cellspacing="0" cellpadding="0">
 		      			<tr class="row_head">	      				
 	      					<th th:text="#{app.record.id}"></th>
