@@ -12,7 +12,7 @@ public class CzechCharsValidator implements ConstraintValidator<CzechChars, Stri
 	
 	@Override
 	public boolean isValid(String dataField, ConstraintValidatorContext context) {
-		return dataField !=null && dataField.matches("^[.-ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]+$");
+		return dataField !=null && dataField.matches("^[-ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s\\.]+$");
 	}
 
 }

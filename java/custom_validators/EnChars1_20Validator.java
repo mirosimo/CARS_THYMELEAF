@@ -13,7 +13,7 @@ public class EnChars1_20Validator implements ConstraintValidator<EnChars1_20, St
 	@Override
 	public boolean isValid(String dataField, ConstraintValidatorContext context) {
 		return dataField !=null 
-				&& dataField.matches("^[.-a-zA-Z0-9\s]+$")
+				&& dataField.matches("^[-a-zA-Z0-9\s\\.]+$")
 				&& dataField.length() > 0
 				&& dataField.length() < 21;
 	}

@@ -14,7 +14,7 @@ public class CzechChars1_50Validator implements ConstraintValidator<CzechChars1_
 	@Override
 	public boolean isValid(String dataField, ConstraintValidatorContext context) {
 		return dataField !=null 
-				&& dataField.matches("^[.-ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s]+$")
+				&& dataField.matches("^[-ěščřžýáíéóúůďťňĎŇŤŠČŘŽÝÁÍÉÚŮĚÓa-zA-Z0-9\s\\.]+$")
 				&& dataField.length() > 0
 				&& dataField.length() < 51;
 	}
