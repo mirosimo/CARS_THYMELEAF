@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <th:block th:include="fragments/head-tags.html :: head_tags"></th:block>
+      <title th:text="#{app.cars-grid-model-title}"></title>
+   </head>
+   <body>
+   		<div class="application-wrapper">
+   			<!-- Top part o page - logo, img... -->
+   			<div class="top-part" th:include="fragments/top_part.html :: top_part">
+   			</div>   			
+   			<div class= "middle-part">
+   			   
+	   			<div th:replace="fragments/top_nav :: navbar"></div> <!-- Top menu -->
+	   		
+	   		
+		   		<div class="content-part">
+		   			<!-- Logo of car brand (Skoda, Ford,...) -->
+			   		<div class="logo-part" > 
+			   			<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(listEntities[0].carBrand.getSmallLogoImg().img)}" />
+			   		</div>
+			   		
+		   			<div class="title-part" >		
+						<h1 th:text="#{app.cars-grid-model-title}"></h1>
+					</div>								   			
+	   				
+	   				<!-- Grid with car images and description <div class="cars-grid-cell-container"> -->
+		   			<div class="cars-grid">
+		   				<th:block th:each="carModel : ${listEntities}" th:object="${carModel}">
+		   					
+		   					<!-- Each cell in grid contains its own subgrid - this subrgrid has one column and two rows.
+		   						- First row contains car image, second row contains information about car, etc...	   							 
+		   					 -->
+		   					<div class="car-grid-cell-sub-grid" th:each="carModelImg : ${carModel.carModelImgs}" th:object="${imgUtil}">
+		   						
+				   					<!-- Geting img from blob field -->		   					
+					   				<img th:src="'data:image/png;base64,' + ${imgUtil.getImgData(carModelImg.img)}" />			   								   				
+				   					<span class="description" th:text="${carModel.name}"></span>			   							   					
+		   					</div>	
+		   				</th:block>
+		   			</div>
+		   			
+		   		</div><!-- End of content-part -->	
+   			</div> <!--  End of middle part -->   		 
+	   		<div class="footer-part">
+	   		</div>
+	   	</div> <!-- End of application-wrapper -->   		
+   </body>
+</html>

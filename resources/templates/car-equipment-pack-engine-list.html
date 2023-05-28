@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!---------------------------------------------------------->
+<!-- This view displays Equipments packs and              -->
+<!-- under each writes out Engines which was assigned to  -->
+<!-- particular equipmant pack                            -->
+<!---------------------------------------------------------->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <link type="text/css" th:href="@{/css/top_navbar.css}" rel="stylesheet"/>
+      <title>Equipment pack - Engines list</title>
+   </head>
+   <body>
+   <div class="application-wrapper">
+	   <div class= "middle-part">   
+	   		<div class="content-part equipment-pack-engines car-equipment-pack-list">	
+	   			<div class="title-part" >		
+					<h1>Equipment pack - Engines list</h1>
+				</div>
+				
+				<!-- Car Brand Logo -->
+	   			<div class="logo-part" >
+	   				<img th:src="'data:image/png;base64,' + ${imgUtil
+	   								.getImgData(listEntities[0].carModel.carBrand.getSmallLogoImg().img)}" />
+	   			</div>
+				<!-- Car model title -->
+				<div class="car-model-title">
+					<h1 th:text="${listEntities[0].carModel.name}"></h1>
+				</div>
+				
+				<!-- Car model img -->
+				<div class="car-model-img">
+					<img th:src="'data:image/png;base64,' + ${imgUtil
+	   								.getImgData(listEntities[0].carModel.carModelImgs[0].img)}" />
+	   			</div>
+				
+				<th:block th:each="equipmentPack : ${listEntities}" th:object="${equipmentPack}">
+					<br/>
+					<h2 th:text="*{name}"></h2>
+					<div class="table-part">			  			    	
+			      		<table cellspacing="0" cellpadding="0">
+			      			<tr class="row_head">	      				
+		      					<th>Id</th>
+		      					<th>Fuel</th>
+		      					<th>Engine Group</th>
+		      					<th>Name</th>
+		      					<th>Power</th>		      					
+		      					<th>Added</th>
+		      					<th>Active</th>
+			      			</tr>
+			      			<th:block th:each="equipmentPackEngine : ${equipmentPack.getEnginesOrderedByEngineGroupAndName()}">	      			
+			      				<tr class="row_body">
+			      					<td th:text="${equipmentPackEngine.carEngine.id}"></td>
+			      					<td th:text="${equipmentPackEngine.carEngine.propellantType.getNiceValue()}"></td>
+			      					<td th:text="${equipmentPackEngine.carEngine.engineGroup}"></td>
+			      					<td th:text="${equipmentPackEngine.carEngine.name}"></td>
+			      					<td th:text="${equipmentPackEngine.carEngine.power} + ' KW'"></td>		      					      					      							      				
+			      					<td th:text="${#dates.format(equipmentPackEngine.added, 'dd-MM-yyyy')}"></td>
+			      					<td th:if="${equipmentPackEngine.active}">			      						
+			      						<img src="/img/green-check.png" alt="Active Engine" width="20">
+			      					</td>
+			      					<td th:unless="${equipmentPackEngine.active}">			      						
+			      						<img src="/img/delete.png" alt="NOT Active Engine" width="20">
+			      					</td>
+				      			</tr>  	
+			      			</th:block>      			
+			      		</table>
+		      		</div>
+		      	</th:block>
+      		</div>  <!-- End content-part -->     		
+   		</div> <!--  End of middle part -->   		 
+	   	<div class="footer-part">
+	   	</div>
+	  </div> <!-- End of application-wrapper -->    	
+   </body>
+   
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!------------------------------------------>
+<!-- View for adding new User into system -->
+<!------------------------------------------>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <title>New User</title>
+   </head>
+   <body>
+   		<div class="application-wrapper">   			
+   			<div class= "middle-part">  
+		   		<div class="content-part">	
+		   			<div class="title-part" >		
+						<h1>New User</h1>
+					</div>	   					   					
+	   					   				
+		   			<form action="#" th:action="@{/save-user}" th:object="${appUser}" method="POST">   					   					   						
+		   				<div class="grid-container-base grid-container-two-col">		   					
+		   					            
+			            	<label>User name</label>			            				            		
+			   				<input class="data-column" type="text" size="18"th:field="*{username}">			   				
+			   				
+			   				<label>Password</label>
+			   				<input class="data-column" name="password" type="password" size="25" th:field="*{password}">			   							   							   				
+			   				
+			   				<label>Email</label>
+			   				<input class="data-column" type="text" size="25" th:field="*{email}">
+			   				
+			   				<label>Assign Roles to User</label>
+			   				<div class="role-checkboxes">
+			   					<th:block th:each="role : ${listRoles}">			   			    
+				   			    	<div>		   					
+								    	<input type="checkbox" name="role_checkbox" th:value="${role.id}"/> 
+								    	<label th:text="${role.name}"></label>
+								    </div>
+								</th:block> 			   				
+							</div>
+			   			</div>
+			   			<div class="button-part">   				   				   				   				
+		   					<button class="confirm-button" type="submit">Save</button>
+		   				</div>
+		   			</form>
+		   		</div>	
+   			</div> <!--  End of middle part -->
+	   		<div class="footer-part">
+   			</div>     		
+   		</div> <!-- End of application-wrapper -->	   		
+   </body>
+</html>

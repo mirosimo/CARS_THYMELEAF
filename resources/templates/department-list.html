@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-------------------------------------->
+<!-- List of Departments - table form -->
+<!-------------------------------------->
+
+<!-- Attribute *menuItem* is pass through MenuInterceptor
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <th:block th:include="fragments/head-tags.html :: head_tags"></th:block>
+      <title>Autosalon</title>
+   </head>
+   <body>
+   <div class="application-wrapper">
+	   <div class="top-part" th:include="fragments/top_part.html :: top_part">
+	   </div>   
+	   <div class= "middle-part">
+	   		<!-- <div th:replace="fragments/top_nav :: navbar"></div> -->
+		   <div class="content-part">	
+	   			<div class="title-part" >		
+					<h1 th:text="#{app.department.list.title}"></h1>
+				</div>
+				<div class="table-part">			  			    	
+		      		<table cellspacing="0" cellpadding="0">
+		      			<tr class="row_head">	      				
+	      					<th th:text="#{app.record.id}"></th>
+	      					<th th:text="#{app.department.list.name}"></th>
+	      					<th th:text="#{app.department.list.description}"></th>
+	      					<th th:text="#{app.update}"></th>
+	      					<th th:text="#{app.delete}"></th>
+		      			</tr>
+		      			<th:block th:each="department : ${listDepartments}" th:object="${department}">	      			
+	      				<tr class="row_body">
+	      					<td th:text="*{id}"></td>
+	      					<td th:text="*{name}"></td>
+	      					<td th:text="*{description}"></td>      					      					
+		      					
+		      				<td class="update-column">
+		      					<a th:href="@{/department-update/} + *{id}" >
+		      						<img src="/img/edit-icon16.png" alt="Edit Department" >
+		      					</a>	      						
+		      				</td>
+		      				<td class="delete-column">
+	      						<a th:href="@{/department-delete/} + *{id}" >
+	      							<img src="/img/delete.png" alt="Delete Department" >
+	      						</a>      						
+	      					</td>				
+		      			</tr>  	
+		      			</th:block>      			
+		      		</table>
+	      		</div>
+	      		<div class="button-part">
+	      			<a th:href="@{/department-new}" class="confirm-button" 
+	      				th:text="#{app.department.list.btn-new-department}"></a>
+	      		</div>
+      		</div>  <!-- End content-part -->   		
+     	</div> <!--  End of middle part -->
+	   	<div class="footer-part">
+   		</div>     		
+   	</div> <!-- End of application-wrapper -->      	
+   </body>
+   
+</html>

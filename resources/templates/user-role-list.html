@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!------------------------------------------------------------------>
+<!-- List of Users and roles assigned to each of them              -->
+<!-- Output is in table shape 									  -->
+<!------------------------------------------------------------------>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <title>Users - Roles List</title>
+   </head>
+   <body>
+   <div class="application-wrapper">
+	   <div class= "middle-part">	   		
+		   <div class="content-part">	
+	   			<div class="title-part" >		
+					<h1>Users - Roles List</h1>
+				</div>
+				<div class="table-part">			  			    	
+		      		<table cellspacing="0" cellpadding="0">
+		      			<tr class="row_head">	      				
+	      					<th>ID</th>
+	      					<th>Username</th>	      					
+	      					<th>Role</th>	
+	      					<th>Added</th>
+	      					<th>Active</th>      					  
+		      			</tr>
+		      			<th:block th:each="user : ${listUsers}">
+		      				<th:block th:each="userRole : ${user.userRoles}">
+			      				<tr class="row_body">
+			      					<td th:text="${user.id}"></td>
+			      					<td th:text="${user.username}"></td>			      					
+				      				<!-- Adding columns with role information  -->
+									<td th:text="${userRole.getRole().name}"></td>
+									<td th:text="${#dates.format(userRole.dateAdded, 'dd-MM-yyyy')}"></td>
+									<td th:if="${userRole.active}">			      						
+			      						<img src="/img/green-check.png" alt="Active User Role" width="20">
+			      					</td>
+			      					<td th:unless="${userRole.active}">			      						
+			      						<img src="/img/delete.png" alt="NOT Active User Role" width="20">
+			      					</td>
+				      			</tr>  	
+			      			</th:block>
+		      			</th:block>      			
+		      		</table>
+	      		</div>
+      		</div>  <!-- End content-part -->   		
+     	</div> <!--  End of middle part -->
+	   	<div class="footer-part">
+   		</div>     		
+   	</div> <!-- End of application-wrapper -->      	
+   </body>
+   
+</html>

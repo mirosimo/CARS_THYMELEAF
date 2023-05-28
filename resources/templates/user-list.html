@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-------------------------------->
+<!-- List of Users - table form -->
+<!-------------------------------->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <title>Users List</title>
+   </head>
+   <body>
+   <div class="application-wrapper">
+	   <div class= "middle-part">	   		
+		   <div class="content-part">	
+	   			<div class="title-part" >		
+					<h1>Users List</h1>
+				</div>
+				<div class="table-part">			  			    	
+		      		<table cellspacing="0" cellpadding="0">
+		      			<tr class="row_head">	      				
+	      					<th>ID</th>
+	      					<th>Username</th>
+	      					<th>Email</th>
+	      					<th></th>
+	      					<th></th>  
+		      			</tr>
+		      			<th:block th:each="user : ${listUsers}" th:object="${user}">	      			
+	      				<tr class="row_body">
+	      					<td th:text="*{id}"></td>
+	      					<td th:text="*{username}"></td>
+	      					<td th:text="*{email}"></td>   	      					 					      					
+		      					
+		      				<td class="update-column">
+		      					<a th:href="@{/user-update/} + *{id}" >
+		      						<img src="/img/edit-icon16.png" alt="Edit User" >
+		      					</a>	      						
+		      				</td>
+		      				<td class="delete-column">
+	      						<a th:href="@{/user-delete/} + *{id}" >
+	      							<img src="/img/delete.png" alt="Delete User" >
+	      						</a>      						
+	      					</td>				
+		      			</tr>  	
+		      			</th:block>      			
+		      		</table>
+	      		</div>
+	      		<div class="button-part">
+	      			<a th:href="@{/user-new}" class="confirm-button">New User</a>
+	      		</div>
+      		</div>  <!-- End content-part -->   		
+     	</div> <!--  End of middle part -->
+	   	<div class="footer-part">
+   		</div>     		
+   	</div> <!-- End of application-wrapper -->      	
+   </body>
+   
+</html>

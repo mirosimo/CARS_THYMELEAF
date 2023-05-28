@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!------------------------------------------>
+<!-- View for adding new Role into system -->
+<!------------------------------------------>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>   
+      <title>Add new Role</title>
+   </head>
+   <body>
+   		<div class="application-wrapper">
+   			<div class= "middle-part">  
+		   		<div class="content-part">	
+		   			<div class="title-part" >		
+						<h1>Add new Role</h1>
+					</div>	   					   					
+	   					   				
+		   			<form action="#" th:object="${appRole}"  th:action="@{/role-save}" method="POST">		   					   					   						
+		   				<div class="grid-container-base grid-container-two-col">		   					
+		   					            
+			            	<label for="name">Role Name</label>			            				            		
+			   				<input class="data-column" type="text" size="18"th:field="*{name}" placeholder="">			   				
+
+							<label for="name">Role Type</label>			            				            		
+			   				<input class="data-column" type="text" size="18"th:field="*{roleType}" placeholder="">
+			   				
+			   				<label for="description">Role Description</label>
+			   				<input class="data-column" type="text" size="25" th:field="*{descShort}" placeholder="">		   				
+			   			</div>
+			   			<div class="button-part">   				   				   				   				
+		   					<button class="confirm-button" type="submit">Save</button>
+		   				</div>
+		   			</form>
+		   		</div>	
+   			</div> <!--  End of middle part -->
+	   		<div class="footer-part">
+   			</div>     		
+   		</div> <!-- End of application-wrapper -->	   		
+   </body>
+</html>

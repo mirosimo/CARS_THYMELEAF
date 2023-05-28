@@ -1,0 +1,7 @@
+<div th:fragment="head_tags">	
+      <meta charset = "UTF-8" />
+      <link type="text/css" th:href = "@{/css/app_style.css?t=} + 
+      					${#dates.format(#dates.createNow(), 'ddMMyyyyHHmmss')}" rel = "stylesheet"/>
+      <link type="text/css" th:href="@{/css/top_navbar.css?t=} + 
+      					${#dates.format(#dates.createNow(), 'ddMMyyyyHHmmss')}" rel="stylesheet"/>
+</div>

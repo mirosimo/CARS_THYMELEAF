@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!----------------------------------------------  -->
+<!-- View display list of employees in table form -->
+<!----------------------------------------------  -->
+
+<!--  Attribute *menuItem* is pass through MenuInterceptor
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <th:block th:include="fragments/head-tags.html :: head_tags"></th:block>
+      <title>Autosalon</title>
+   </head>
+   <body>
+   <div class="application-wrapper">
+	   <div class="top-part" th:include="fragments/top_part.html :: top_part">
+	   </div>
+	   <div class= "middle-part">	      
+		   <div th:replace="fragments/top_nav :: navbar"></div>
+		   <div class="content-part">	
+	   			<div class="title-part" >		
+					<h1 th:text="#{app.employee.list.title}"></h1>
+				</div>
+				<div class="table-part">			  			    	
+		      		<table cellspacing="0" cellpadding="0">
+		      			<tr class="row_head">
+		      				<th th:text="#{app.record.id}"></th>	      				
+	      					<th th:text="#{app.employee.list.first-name}"></th>
+	      					<th th:text="#{app.employee.list.last-name}"></th>      					
+	      					<th th:text="#{app.employee.list.work-position}"></th>
+	      					<th th:text="#{app.employee.list.department}"></th>
+	      					<th th:text="#{app.employee.list.email}"></th>
+	      					<th th:text="#{app.employee.list.mobile-phone}"></th>      					      					      				
+	      					<th th:text="#{app.update}"></th>	
+	      					<th th:text="#{app.delete}"></th>
+		      			</tr>
+		      			<th:block th:each="employee : ${listEmployee}" th:object="${employee}">
+		      				      
+		      			<!-- data-href - When user double click on some row in list of employees, 
+   						then appear particular employee detail view -->			
+	      				<tr class="row_body" th:data-href="@{'employee-detail/'+*{id}}" >  
+	      					<td th:text="*{id}"></td>
+	      					<td th:text="*{firstName}"></td>
+	      					<td th:text="*{lastName}"></td>
+	      					<td th:text="*{workPosition.name}"></td>
+	      					<td th:text="*{department.name}"></td>
+	      					<td th:text="*{email}"></td>
+	      					<td th:text="*{mobilePhone}"></td>
+	      					
+	      					      						      				
+		      				<td class="update-column">
+		      					<a th:href="@{/employee-update/} + *{id}" >
+		      						<img src="/img/edit-icon16.png" alt="Edit Employee" >
+		      					</a>	      						
+		      				</td>
+		      				<td class="delete-column">
+	      						<a th:href="@{/employee-delete/} + *{id}" >
+	      							<img src="/img/delete.png" alt="Delete Employee" >
+	      						</a>      						
+	      					</td>				
+		      			</tr>  	
+		      			</th:block>      			
+		      		</table>
+	      		</div>
+	      		<div class="button-part">
+	      			<a th:href="@{/employee-new}" class="confirm-button" 
+	      				th:text="#{app.button.new-record}"></a>
+	      		</div>
+	      	</div>  <!-- End of content-part -->
+      	     		
+   			</div> <!--  End of middle part -->
+	   		<div class="footer-part">
+   			</div>     		
+   		</div> <!-- End of application-wrapper -->    	
+   </body>
+   
+   <script>
+   		/* When user double click on some row in list of employees, 
+   			then appear particular employee detail view */ 
+   		document.addEventListener("DOMContentLoaded", () => {
+   			const rows = document.querySelectorAll("tr[data-href]");
+   			//console.log(rows);
+   			rows.forEach(row => {
+   				row.addEventListener("click", () => {
+   					window.location.href = row.dataset.href;
+   				});
+   			});
+   		});
+   </script>
+</html>

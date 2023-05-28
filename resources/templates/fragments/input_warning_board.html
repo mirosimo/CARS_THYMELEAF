@@ -1,0 +1,13 @@
+<!------------------------------------------------------>
+<!-- Error warning signboard 			              -->
+<!-- Is used in views for edding or updating entities -->
+<!-- When user puts wrong data into inputs            -->
+<!-- Than show the general error board                -->
+<!------------------------------------------------------>
+<div class="" th:fragment="input_warning_board">	
+	 <div class="input-warning-board" th:if="${#fields.hasAnyErrors()}">
+	 	<img src="/img/flashing-beacon.png" alt="alert image">
+	 	<h1 th:text="#{app.alert.inputs}"></h1>
+	 </div>	 
+	 <div style="clear: both;"></div>
+</div>

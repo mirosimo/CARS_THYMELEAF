@@ -1,0 +1,20 @@
+<!------------------------------------------------------------------------>
+<!-- Generating menu tree                                               -->
+<!-- This is little bit tricky ( because of Thymeleaf)                  -->
+<!-- I found solution on youtube . 										-->
+<!-- https://www.youtube.com/watch?v=rMuLeTyTIh4						-->
+<!-- Everithing start with root menuItem - and then is used recursion	-->
+<!-- - recursive including top_nav.html									-->
+<!--  																	-->
+<!-- Attribute *menuItem* is pass through MenuInterceptor				-->
+<!------------------------------------------------------------------------>
+<div class="m-navbar" th:fragment="navbar">	  
+		<ul>
+			<li th:each="item : ${menuItem.nestedItems}"> 
+				<a th:href="@{/{url}(url=${item.url})}" 
+					th:text="#{${item.itemName}}"></a>									                           
+						<div th:with="menuItem = ${item}" 
+							th:include="fragments/top_nav.html :: navbar" th:remove="tag" ></div>																										
+			</li>
+		</ul>	
+</div>

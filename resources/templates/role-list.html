@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-------------------------------->
+<!-- List of Roles - table form -->
+<!-------------------------------->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset = "UTF-8" />
+      <link th:href = "@{/css/app_style.css}" rel = "stylesheet"/>
+      <title>Roles List</title>
+   </head>
+   <body>
+   <div class="application-wrapper">
+	   <div class= "middle-part">	   		
+		   <div class="content-part">	
+	   			<div class="title-part" >		
+					<h1>Roles List</h1>
+				</div>
+				<div class="table-part">			  			    	
+		      		<table cellspacing="0" cellpadding="0">
+		      			<tr class="row_head">	      				
+	      					<th>ID</th>
+	      					<th>Name</th>
+	      					<th>Desc</th>
+	      					<th>Type</th>
+	      					<th></th>
+	      					<th></th>    
+		      			</tr>
+		      			<th:block th:each="role : ${listRoles}" th:object="${role}">	      			
+	      				<tr class="row_body">
+	      					<td th:text="*{id}"></td>
+	      					<td th:text="*{name}"></td>
+	      					<td th:text="*{descShort}"></td>   	      					 					      					
+		      				<td th:text="*{roleType}"></td>   	  
+		      					
+		      				<td class="update-column">
+		      					<a th:href="@{/role-update/} + *{id}" >
+		      						<img src="/img/edit-icon16.png" alt="Edit Role" >
+		      					</a>	      						
+		      				</td>
+		      				<td class="delete-column">
+	      						<a th:href="@{/role-delete/} + *{id}" >
+	      							<img src="/img/delete.png" alt="Delete Role" >
+	      						</a>      						
+	      					</td>				
+		      			</tr>  	
+		      			</th:block>      			
+		      		</table>
+	      		</div>
+	      		<div class="button-part">
+	      			<a th:href="@{/role-new}" class="confirm-button">New Role</a>
+	      		</div>
+      		</div>  <!-- End content-part -->   		
+     	</div> <!--  End of middle part -->
+	   	<div class="footer-part">
+   		</div>     		
+   	</div> <!-- End of application-wrapper -->      	
+   </body>
+   
+</html>
