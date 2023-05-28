@@ -95,6 +95,15 @@ public class CarBrand {
 						.get();						
 	}
 	
+	/* Return img represents Car Brand */
+	public CarBrandImg getMainBrandImg() {		
+		return this.carBrandImgSet.stream()
+						.filter(imgObj -> imgObj.getImgType().equals(CarBrandImg.ImgType.BRAND_IMG)
+								&& imgObj.isActive())
+						.findFirst()
+						.get();						
+	}
+	
 	/* Getters, Setters*/
 	public String getName() {		
 		return name;
