@@ -24,7 +24,7 @@ Also in folder xxx-documentation you can find some view examples - scrennshots. 
 ## Implemented features
 For now there are implemented things like:
 Inserting, Updating, Deleting records, Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management,  Multilanguage, 
-Views Validation - Custom Validators, Custom annotations, Authentification, Authorization - Users, Roles management
+View inputs Validation - Custom Validators, Custom annotations, Authentification, Authorization, Login, logout user, Users, Roles management
 Images are saved as blob in db, Thymeleaf, Css.
 
 
