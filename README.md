@@ -18,13 +18,13 @@ I was created 3 ER diagrams
 + ER-car-variant
 + ER-rest-of
 
-Which could be usefull for understanding the logic - folder xxx-documentation.
+Which could be usefull for understanding the logic.
 Also in folder xxx-documentation you can find some view examples - scrennshots. But is still in progress so is changing in time. 
 
 ## Implemented features
 For now there are implemented things like:
 Inserting, Updating, Deleting records, Relation between entities, One To Many, Many To Many, Many To Many with extra columns in connection table, Exception management,  Multilanguage, 
-Views Validation, Authentification, Authorization - Users, Roles management
+Views Validation - Custom Validators, Custom annotations, Authentification, Authorization - Users, Roles management
 Images are saved as blob in db, Thymeleaf, Css.
 
 
