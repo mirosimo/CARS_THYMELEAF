@@ -6,7 +6,9 @@
 + DB: Oracle 19
 + Template engine: Thymeleaf
 
-## Description
+## Description of Functionality
+
+## Description of Technology
 
 Here appears source code of sample application in Spring Boot on which I have been working for last months. 
 At this moment the applications is consist of about 30 entities and similar number of tables in database. 
