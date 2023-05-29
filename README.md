@@ -113,7 +113,7 @@ In the near future will be done :
 
 # Screenshots
 ## Add Engine 
-![Add Engine](/car_showroom/screenshots/add-engine.png)
+![Add Engine](/screenshots/add-engine.png)
 
 ## List of Engines
 ![Engine list](/car_showroom/screenshots/engine-list.png)
