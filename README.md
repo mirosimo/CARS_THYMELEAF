@@ -133,7 +133,14 @@ In the near future will be done :
 ## Wrong inputs data
 ![Wrong inputs data](/screenshots/car-brand-new-wrong-data.png)
 
+## Grid with all Available models of particular car brand
+![car models grid](/screenshots/models-grid.png)
 
+## Login form
+![Login form](/screenshots/login-form.png)
+
+## Login form - wrong credentials
+![Login form wrong credentials](/screenshots/login-wrong-credentials.png)
 
 
 
