@@ -8,7 +8,7 @@
 
 ## Description
 
-Here appears source code of sample application in Spring Boot on which I have been working for last days. 
+Here appears source code of sample application in Spring Boot on which I have been working for last months. 
 At this moment the applications is consist of about 30 entities and similar number of tables in database. 
 For now is in progress stuff around car configuration. Entities - CarBrand, CarModel, CarEquipmentPack, CarEngine, etc.
 And the other branch where I am working on is around human resources - entity Employee, and many relational entities.
