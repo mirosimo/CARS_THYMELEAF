@@ -95,7 +95,7 @@ Fragment files are placed in folder: **Resources/templates/fragments**
 + **top_nav** - contains top menu
 + **input_warning_board** - contains alert board, which is displayed, when user inserts and confirm wrong data.
 + **login_warning_board** - Alert board used by wrong login.
-+ **head_tags** - Contains links for css stylesheet and other.
++ **head_tags** - Contain links for css stylesheet and other.
 
 ## CSS
 + Top Strip – logo, two images – used FLEX. 
