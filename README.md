@@ -90,10 +90,12 @@ Defining menuItem attribute in each controller had been little bit annoying.
 
 Fragment files are placed in folder: **Resources/templates/fragments**
 
-Just now are using 3 fragments.
 + **top_part** - the very top part of application - contains logo and two design images
-+ **navbar** - contains manu
++ **info_strip** - Strip, where is placed logged user info, button for login, logout, in future will be here placed language switcher.
++ **top_nav** - contains top menu
 + **input_warning_board** - contains alert board, which is displayed, when user inserts and confirm wrong data.
++ **login_warning_board** - Alert board used by wrong login.
++ **head_tags** - Contains links for css stylesheet and other.
 
 ## CSS
 + Top Strip – logo, two images – used FLEX. 
