@@ -116,16 +116,31 @@ In the near future will be done :
 ![Add Engine](/screenshots/add-engine.png)
 
 ## List of Engines
-![Engine list](/car_showroom/screenshots/engine-list.png)
+![Engine list](/screenshots/engine-list.png)
 
 ## Equipment pack ant its available angines
-![Equipment pack engines](/car_showroom/screenshots/eq-engines.png)
+![Equipment pack engines](/screenshots/eq-engines.png)
 
 ## Add new Equipment pack 
-![Add new Equipment pack](/car_showroom/screenshots/eq-pack-new.png)
+![Add new Equipment pack](/screenshots/eq-pack-new.png)
 
 ## Equipment pack List
-![Equipment pack list](/car_showroom/screenshots/eq-pack-list.png)
+![Equipment pack list](/screenshots/eq-pack-list.png)
+
+## Add new User
+![Add new User](/screenshots/role-user.png)
+
+## Wrong inputs data
+![Wrong inputs data](/screenshots/car-brand-new-wrong-data.png)
+
+
+
+
+
+
+
+
+
 
 
 
