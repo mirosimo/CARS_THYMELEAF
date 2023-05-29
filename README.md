@@ -3,7 +3,7 @@
 ## Preamble
 I spent maybee two years with Java FX. But for now I would like to got a new Job and I found out, that Java FX is little bit death branch. 
 So put Energy into Spring, Spring boot is probably much more meaningfull.
-This is my sample application - I have been engaged with Spring Boot just for a few months - for now (May 2023) about 5,6 months. 
+This is a sample application - I have been engaged with Spring Boot just for a few months - for now (May 2023) about 5,6 months. 
 So the applicaton is surely not perfect. I am trying step by step implement new features of Spring Boot. At the end of this document are placed some 
 screenshots of application. For now is used server side template engine **Thymeleaf** - why Thymmeleaf - it just happend on beginning.... Soon I would like 
 to skip to client side rendering - And practice React or Angular, RestController, etc. 
