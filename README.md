@@ -118,7 +118,7 @@ In the near future will be done :
 ## List of Engines
 ![Engine list](/screenshots/engine-list.png)
 
-## Equipment pack ant its available angines
+## Equipment pack and its available angines
 ![Equipment pack engines](/screenshots/eq-engines.png)
 
 ## Add new Equipment pack 
