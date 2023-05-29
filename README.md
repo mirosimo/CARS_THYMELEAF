@@ -1,5 +1,9 @@
 # Sample application - Car Showroom. 
 
+## Preamble
+This is my sample application in Spring Boot. I have been engaged with Spring Boot just for a few months - for now (May 2023) about 5,6 months. 
+So the applicaton is surely not perfect. I am trying step by step implement new features of Spring Boot. 
+
 ## Base params of application
 + Spring Boot 2.7.6
 + Java 17
