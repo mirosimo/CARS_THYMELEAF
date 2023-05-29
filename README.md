@@ -110,3 +110,23 @@ In the near future will be done :
 + User management - Privileges, Roles 
 + Error logging
 + Fundamental Change  - When I'll go through the Spring Security than will come New Version using client side rendering - probably React - Instead of server side rendering - Thymeleaf (Why I used Thymeleaf at the beginning ? - it just happend) . I would like practice using JSON object, using restController instead of Controller and creating Views on client side, authentication using JWT, etc.
+
+# Screenshots
+## Add Engine 
+![Add Engine](/car_showroom/screenshots/add-engine.png)
+
+## List of Engines
+![Engine list](/car_showroom/screenshots/engine-list.png)
+
+## Equipment pack ant its available angines
+![Equipment pack engines](/car_showroom/screenshots/eq-engines.png)
+
+## Add new Equipment pack 
+![Add new Equipment pack](/car_showroom/screenshots/eq-pack-new.png)
+
+## Equipment pack List
+![Equipment pack list](/car_showroom/screenshots/eq-pack-list.png)
+
+
+
+
