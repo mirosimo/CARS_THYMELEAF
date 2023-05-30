@@ -2,7 +2,7 @@
 
 ## Preamble
 In the past I was using Java FX - but this is probably little bit death branch. 
-So I was rocognized that put Energy into Spring boot is much more meaningfull.
+So I was rocognized that putting Energy into Spring boot is much more meaningfull.
 I have been engaged with Spring Boot just for a few months - for now (May 2023) about 5,6 months. 
  I am trying step by step implement new features of Spring Boot. At the end of this document are placed some 
 screenshots of application. For now is used server side rendering - template engine **Thymeleaf** - why Thymmeleaf - it just happend on beginning.... Soon I would like 
