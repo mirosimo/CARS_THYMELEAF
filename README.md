@@ -1,8 +1,8 @@
 # Sample application - Car Showroom. 
 
 ## Preamble
-I spent maybee two years with Java FX - but this is probably little bit death branch. 
-I have rocognized that put Energy into Spring, Spring boot is much more meaningfull.
+In the past I was using Java FX - but this is probably little bit death branch. 
+So I was rocognized that put Energy into Spring boot is much more meaningfull.
 I have been engaged with Spring Boot just for a few months - for now (May 2023) about 5,6 months. 
 So the applicaton is surely not perfect. I am trying step by step implement new features of Spring Boot. At the end of this document are placed some 
 screenshots of application. For now is used server side template engine **Thymeleaf** - why Thymmeleaf - it just happend on beginning.... Soon I would like 
@@ -112,6 +112,7 @@ In the near future will be done :
 + User management - Privileges, Roles 
 + Error logging
 + Fundamental Change  - When I'll go through the Spring Security than will come New Version using client side rendering - probably React - Instead of server side rendering - Thymeleaf (Why I used Thymeleaf at the beginning ? - it just happend) . I would like practice using JSON object, using restController instead of Controller and creating Views on client side, authentication using JWT, etc.
+
 
 # Screenshots
 ## Add Engine 
