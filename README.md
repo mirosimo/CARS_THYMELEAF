@@ -1,9 +1,8 @@
 # Sample application - Car Showroom. 
 
 ## Preamble
-In the past I was using Java FX - but this is probably little bit death branch. 
-So I was rocognized that putting Energy into Spring boot is much more meaningfull.
-I have been engaged with Spring Boot just for a few months - for now (May 2023) about 5,6 months. 
+Here appears source code of sample application in Spring Boot on which I have been working for last months. 
+ - for now (May 2023) about 5,6 months. 
  I am trying step by step implement new features of Spring Boot. At the end of this document are placed some 
 screenshots of application. For now is used server side rendering - template engine **Thymeleaf** - why Thymmeleaf - it just happend on beginning.... Soon I would like 
 to skip to client side rendering - And practice React or Angular, RestController, etc. 
@@ -17,8 +16,6 @@ to skip to client side rendering - And practice React or Angular, RestController
 ## Description of Functionality
 
 ## Description of Technology
-
-Here appears source code of sample application in Spring Boot on which I have been working for last months. 
 At this moment the applications is consist of about 30 entities and similar number of tables in database. 
 For now is in progress stuff around car configuration. Entities - CarBrand, CarModel, CarEquipmentPack, CarEngine, etc.
 And the other branch where I am working on is around human resources - entity Employee, and many relational entities.
@@ -29,7 +26,6 @@ I was created 3 ER diagrams
 + ER-rest-of
 
 Which could be usefull for understanding the logic.
-Also in folder xxx-documentation you can find some view examples - scrennshots. But is still in progress so is changing in time. 
 
 ## Implemented features
 For now there are implemented things like:
