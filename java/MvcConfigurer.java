@@ -42,8 +42,8 @@ public class MvcConfigurer implements WebMvcConfigurer {
      * 
      * */
     @Bean
-    public MenuInterceptor menuInterceptor() {
-    	return new MenuInterceptor();
+    public UtilInterceptor menuInterceptor() {
+    	return new UtilInterceptor();
     }
     
 
