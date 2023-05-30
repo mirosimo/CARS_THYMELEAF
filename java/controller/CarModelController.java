@@ -2,18 +2,17 @@ package mirosimo.car_showroom2.controller;
 
 import java.io.IOException;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
-import mirosimo.car_showroom2.Utils.ImageUtil;
-import mirosimo.car_showroom2.model.CarBrand;
 import mirosimo.car_showroom2.model.CarModel;
 import mirosimo.car_showroom2.model.CarModelImg;
 import mirosimo.car_showroom2.service.CarBrandService;
@@ -41,7 +40,6 @@ public class CarModelController {
 	public String listCarModelView(Model model, 
 			@PathVariable (value="brand-url-name") String brandUrlName) {		
 		model.addAttribute("listEntities", carModelService.getEntitiesByCarBrandName(brandUrlName));		
-		model.addAttribute("imgUtil", new ImageUtil());
 		return "car-model-list";
 	}
 	
@@ -49,18 +47,22 @@ public class CarModelController {
 	@GetMapping("/car-model-new/{brand-url-name}")
 	public String newCarModelView(Model model, 
 			@PathVariable (value="brand-url-name") String brandUrlName) {				
-		CarModel carModel = new CarModel();
-		CarBrand carBrand = carBrandService.findEntityByCarBrandUrlName(brandUrlName);
-		carModel.setCarBrand(carBrand);
-		model.addAttribute("carModel", carModel);
-		model.addAttribute("imgUtil", new ImageUtil());				
+		CarModel carModel = new CarModel();		
+		carModel.setCarBrand(carBrandService.findEntityByCarBrandUrlName(brandUrlName));
+		model.addAttribute("carModel", carModel);				
 		return "car-model-new";
 	} 
 	
 	@PostMapping("/car-model-save")
-	public String saveCarModel(@ModelAttribute("carModel") CarModel carModel, 
-			@RequestParam("image") MultipartFile fileModel) throws IOException {
-		byte[] imgModelBytes = fileModel.getBytes();
+	public String saveCarModel(@Valid CarModel carModel, BindingResult result,
+			Model model,
+			@RequestParam("image") MultipartFile carModelImgFile) throws IOException 
+	{
+		if (result.hasErrors()) {
+			model.addAttribute("carModel", carModel);	
+			return "car-model-new";
+		}
+		byte[] imgModelBytes = carModelImgFile.getBytes();
 		
 		CarModelImg carModelImg = new CarModelImg();
 		carModelImg.setImg(imgModelBytes);				
@@ -70,6 +72,9 @@ public class CarModelController {
 		return "redirect:/car-model-list/"+carModel.getCarBrand().getUrlName();
 	}
 	
+	/*
+	 * Deletes car model by id
+	 */
 	@GetMapping("/car-model-delete/{brand-id}/{id}")
 	public String deleteCarModel(@PathVariable (value="id") long id, 
 								@PathVariable (value="brand-id") String brandUrlName) {
@@ -77,16 +82,7 @@ public class CarModelController {
 		return "redirect:/car-model-list/"+brandUrlName;
 	}
 	
-	@GetMapping("/car-model-update/{id}")
-	public String updateCarModel(@PathVariable (value="id") long id, 
-			Model model) {
-		CarModel carModel = this.carModelService.getEntityById(id);
-		model.addAttribute("carModel", carModel);
-		
-		/* listCarBrand is used for combo with car brands*/
-		model.addAttribute("listCarBrand", carBrandService.getAllEntities());
-		return "car-model-update";
-	}
+	
 	
 	/* 
 	 * View that contains grid with car models - of particular car brand.
@@ -94,11 +90,8 @@ public class CarModelController {
 	 *  
 	 * */
 	@GetMapping("/cars-grid-model/{brand-id}")
-	public String gridCarModelView(@PathVariable (value="brand-id") String brandUrlName, Model model) {
-		
-		model.addAttribute("listEntities", carModelService.getEntitiesByCarBrandName(brandUrlName));		
-		model.addAttribute("imgUtil", new ImageUtil());
-		
+	public String gridCarModelView(@PathVariable (value="brand-id") String brandUrlName, Model model) {		
+		model.addAttribute("listEntities", carModelService.getEntitiesByCarBrandName(brandUrlName));				
 		return "cars-grid-model";
 	}
 	

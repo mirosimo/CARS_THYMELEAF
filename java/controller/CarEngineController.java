@@ -12,8 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import mirosimo.car_showroom2.Utils.ImageUtil;
 import mirosimo.car_showroom2.model.CarEngine;
 import mirosimo.car_showroom2.service.CarBrandService;
 import mirosimo.car_showroom2.service.CarEngineService;
@@ -49,8 +47,7 @@ public class CarEngineController {
 		List<CarEngine> listEntities = this.carEngineService.findByCarBrand_urlName(urlCarBrand).stream()
 				.sorted(CarEngine.getComparatorByFuelGroupName())
 				.collect(Collectors.toList());
-		model.addAttribute("listEntities", listEntities);
-		model.addAttribute("imgUtil", new ImageUtil());	
+		model.addAttribute("listEntities", listEntities);	
 		return "car-engine-list";
 	}
 	
@@ -65,8 +62,7 @@ public class CarEngineController {
 			@PathVariable (value="url_brand") String urlBrandName) {
 		CarEngine carEngine = new CarEngine();		
 		carEngine.setCarBrand(carBrandService.findEntityByCarBrandUrlName(urlBrandName));		
-		model.addAttribute("carEngine", carEngine);
-		model.addAttribute("imgUtil", new ImageUtil());	
+		model.addAttribute("carEngine", carEngine);	
 		return "car-engine-new";
 	} 
 	
@@ -76,7 +72,6 @@ public class CarEngineController {
 		{				
 		if (result.hasErrors()) {
 			model.addAttribute("carEngine", carEngine);
-			model.addAttribute("imgUtil", new ImageUtil());
 			return "car-engine-new";
 		}
 		this.carEngineService.saveEntity(carEngine);

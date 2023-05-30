@@ -52,8 +52,7 @@ public class CarEquipmentPackController {
 	public String listEquipmentPackView(Model model, 
 			@PathVariable (value="brand_url_name") String urlCarBrand, 
 			@PathVariable (value="model_url_name") String urlCarModel) {		
-		model.addAttribute("listEntities", carEquipmentPackService.getEntitesByCarBrandAndCarModel(urlCarBrand, urlCarModel));
-		model.addAttribute("imgUtil", new ImageUtil());	
+		model.addAttribute("listEntities", carEquipmentPackService.getEntitesByCarBrandAndCarModel(urlCarBrand, urlCarModel));	
 		return "car-equipment-pack-list";
 	}
 	
@@ -97,7 +96,6 @@ public class CarEquipmentPackController {
 									carEquipmentPack.getCarModel().getCarBrand().getUrlName()));
 			model.addAttribute("listCarBrandEngines", carEngineService.findByCarBrand_urlName(
 									carEquipmentPack.getCarModel().getCarBrand().getUrlName()));
-			model.addAttribute("imgUtil", new ImageUtil());
 						
 			return "car-equipment-pack-new";
 		}						
@@ -150,8 +148,7 @@ public class CarEquipmentPackController {
 				.filter(eqPack -> eqPack.isActive())								
 				.sorted(Comparator.comparing(CarEquipmentPack::getName))				
 				.collect(Collectors.toList());
-		model.addAttribute("listEntities", sortedByEqPackName);
-		model.addAttribute("imgUtil", new ImageUtil());	
+		model.addAttribute("listEntities", sortedByEqPackName);	
 		return "car-equipment-pack-engine-list";
 	} 
 }

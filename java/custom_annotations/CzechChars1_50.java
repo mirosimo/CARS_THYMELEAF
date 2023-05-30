@@ -17,7 +17,7 @@ import mirosimo.car_showroom2.custom_validators.CzechChars1_50Validator;
 @Target( { ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CzechChars1_50 {
-	String message() default "Invalid char";
+	String message() default "Alphabet chars, length 1 - 50 chars";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

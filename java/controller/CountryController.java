@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
-import mirosimo.car_showroom2.Utils.ImageUtil;
 import mirosimo.car_showroom2.model.Country;
 import mirosimo.car_showroom2.service.CountryService;
 
@@ -27,7 +25,6 @@ public class CountryController {
 	@GetMapping("/country-list")
 	public String listCountryView(Model model) {
 		model.addAttribute("listCountry", countryService.getAllEntities());
-		model.addAttribute("imgUtil", new ImageUtil());
 		return "country-list";
 	}
 	

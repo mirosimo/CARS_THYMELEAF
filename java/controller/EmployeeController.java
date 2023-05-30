@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
-import mirosimo.car_showroom2.Utils.ImageUtil;
 import mirosimo.car_showroom2.enums.Degree;
 import mirosimo.car_showroom2.model.Address;
 import mirosimo.car_showroom2.model.Country;
@@ -87,8 +85,7 @@ public class EmployeeController {
 	/* View displays detail information about particular Employee */
 	@GetMapping("/employee-detail/{employeeId}")
 	public String detailEmployeeView(@PathVariable Long employeeId, Model model) {
-		model.addAttribute("employee", employeeService.getEmployeeById(employeeId));
-		model.addAttribute("imgUtil", new ImageUtil());			
+		model.addAttribute("employee", employeeService.getEmployeeById(employeeId));			
 		return "employee-detail";
 	}
 	

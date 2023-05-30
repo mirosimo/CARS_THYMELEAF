@@ -38,7 +38,11 @@ public class UserController {
 	private PasswordEncoder passwordEncoder;
 	
 		
-    
+    /* 
+     * View for adding new user into system 
+     * In the view we can assign to user multiple roles
+     * 
+     * */
     @GetMapping("/user-new")
     public String newUserMoreRoles(Model model) {
     	model.addAttribute("appUser", new User());
