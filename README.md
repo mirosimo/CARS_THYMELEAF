@@ -4,7 +4,7 @@
 In the past I was using Java FX - but this is probably little bit death branch. 
 So I was rocognized that I put Energy into Spring boot is much more meaningfull.
 I have been engaged with Spring Boot just for a few months - for now (May 2023) about 5,6 months. 
-So the applicaton is surely not perfect. I am trying step by step implement new features of Spring Boot. At the end of this document are placed some 
+ I am trying step by step implement new features of Spring Boot. At the end of this document are placed some 
 screenshots of application. For now is used server side template engine **Thymeleaf** - why Thymmeleaf - it just happend on beginning.... Soon I would like 
 to skip to client side rendering - And practice React or Angular, RestController, etc. 
 
