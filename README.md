@@ -1,8 +1,7 @@
 # Sample application - Car Showroom. 
 
 ## Preamble
-Here appears source code of sample application in Spring Boot on which I have been working for last months. 
- - for now (May 2023) about 5,6 months. 
+I am working with Spring Boot just a few months. Here appears source code of my sample application.  
  I am trying step by step implement new features of Spring Boot. At the end of this document are placed some 
 screenshots of application. For now is used server side rendering - template engine **Thymeleaf** - why Thymmeleaf - it just happend on beginning.... Soon I would like 
 to skip to client side rendering - And practice React or Angular, RestController, etc. 
